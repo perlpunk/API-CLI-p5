@@ -1,0 +1,106 @@
+---
+paths:
+  /account:
+    get:
+      output:
+        type: item
+        item:
+          fields:
+          - account/droplet_limit
+          - account/email
+          - account/email_verified
+          - account/status
+          - account/status_message
+          - account/uuid
+        id: account/uuid
+  /droplets:
+    get:
+      output:
+        type: list
+        table:
+          prefix: droplets
+          fields:
+          - id
+          - name
+          - created_at
+          - image/distribution
+          - locked
+          - networks/v4[0]/ip_address
+          - region/name
+          - status
+        id: id
+        formats:
+          name-id:
+            format: "%s--%s"
+            prefix: droplets
+            fields:
+            - name
+            - id
+  /droplets/:id:
+    get:
+      output:
+        type: item
+        item:
+          prefix: droplet
+          fields:
+          - id
+          - name
+          - created_at
+          - locked
+          - networks/v4[0]/ip_address
+          - region/name
+          - status
+          - image/distribution
+          - image/created_at
+          - size/disk
+          - size/memory
+          - vcpus
+          - size/price_monthly
+commands:
+    droplet:
+        op: cmd_apicalls
+        summary: foo
+        subcommands:
+            info:
+                parameters:
+                    -   &droplet_uid_parameter
+                        name: nameid
+                        required: true
+                        filter:
+                            method: droplet_get_id_from_name_id
+                        completion:
+                            - GET
+                            - /droplets
+                            - '--format'
+                            - 'name-id'
+                call:
+                    arguments:
+                    - GET
+                    - /droplets/:id
+                    -
+                        parameter: nameid
+                    - '--table'
+            rename:
+                parameters:
+                    - *droplet_uid_parameter
+                    - name: name
+                call:
+                    arguments:
+                    - POST
+                    - /droplets/:id/actions
+                    -
+                        parameter: nameid
+                body:
+                    type: rename
+                    name:
+                        parameter: name
+    droplets:
+        op: cmd_apicalls
+        subcommands:
+            list:
+                parameters: []
+                call:
+                    arguments:
+                    - GET
+                    - /droplets
+                    - '--table'

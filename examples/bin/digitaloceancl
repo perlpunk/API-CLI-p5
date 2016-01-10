@@ -1,0 +1,39 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+use 5.010;
+use Data::Dumper;
+use FindBin '$Bin';
+use lib "$Bin/../lib";
+use API::CLI::DigitalOcean;
+
+my $spec = do { local $/; <DATA> };
+
+my $cli = API::CLI::DigitalOcean->new({
+    api_spec_file => "$Bin/../etc/digitalocean.yaml",
+    config_file => "$Bin/../etc/digitalocean-config.yaml",
+    dir => "$ENV{HOME}/.digitaloceancl",
+    spec => $spec,
+});
+
+$cli->run;
+
+__DATA__
+---
+name: digitaloceancl
+version: 1
+title: DigitalOcean API
+options:
+    -   name: yaml
+        type: bool
+        description: YAML output
+    -   name: table
+        type: bool
+        description: Formatted table output
+    -   name: dryrun
+        type: bool
+        description: Don't make API call
+    -   name: debug
+        type: bool
+        description: Debug
+commands: {}

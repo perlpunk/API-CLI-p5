@@ -1,0 +1,216 @@
+---
+paths:
+  /users/:username/repos:
+    get:
+      output: &output_repos
+        type: list
+        table:
+          fields:
+          - full_name
+          - updated_at
+        id: full_name
+        formats:
+          fullname:
+            format: "%s"
+            fields: [full_name]
+          name:
+            format: "%s"
+            fields: [name]
+  /user/repos:
+      get:
+          output: *output_repos
+      post:
+          output: &output_repo
+              type: item
+              item:
+                  fields:
+                  - full_name
+                  - description
+                  - html_url
+                  - clone_url
+                  - language
+                  - open_issues_count
+                  - stargazers_count
+                  - watchers_count
+                  - forks_count
+                  - parent/full_name
+                  - created_at
+                  - updated_at
+              id: full_name
+  /repos/:owner/:repo:
+      get:
+          output: *output_repo
+      delete:
+          output:
+              type: item
+              item:
+                  fields: []
+  /users/:username/events:
+        get:
+            output:
+                type: list
+                table:
+                    fields:
+                    - id
+                    - type
+                    - repo/name
+                    - created_at
+                id: id
+  /repos/:owner/:repo/issues:
+        get:
+            output:
+                type: list
+                table:
+                    fields:
+                    - number
+                    - title
+                    - state
+                    - created_at
+                    - updated_at
+                id: id
+  /repos/:owner/:repo/issues/:number:
+        get:
+            output:
+                type: item
+                item:
+                    fields:
+                    - title
+                    - number
+                    - html_url
+                    - state
+                    - comments
+                    - created_at
+                    - updated_at
+  /search/repositories:
+        get:
+            output: &output_search_repos
+                type: listitem
+                item:
+                    fields:
+                    - total_count
+                table:
+                    prefix: items
+                    fields:
+                    - full_name
+                    - updated_at
+                id: items/full_name
+                formats:
+                  name:
+                    prefix: items
+                    format: "%s"
+                    fields:
+                    - name
+  /search/users:
+        get:
+            output:
+                type: listitem
+                item:
+                    fields: [total_count]
+                table:
+                    prefix: items
+                    fields: [login, html_url, type]
+                formats:
+                  login:
+                    prefix: items
+                    format: "%s"
+                    fields: [login]
+subcommands:
+  repo:
+    op: cmd_apicalls
+    summary: Repository
+    subcommands:
+      show:
+        parameters:
+          -   name: owner
+              required: true
+              completion:
+                command:
+                  - replace: [SELF]
+                  - search
+                  - users
+                  - replace: [SHELL_WORDS, CURRENT]
+                  - '--format'
+                  - login
+                  - '--in'
+                  - login
+                  - '--count'
+                  - 100
+          -   name: repo
+              required: true
+              completion:
+                command:
+                  - replace: [SELF]
+                  - search
+                  - userrepos
+                  - replace: [SHELL_WORDS, -1]
+                  - replace: [SHELL_WORDS, CURRENT]
+                  - '--format'
+                  - name
+                  - '--fork'
+                  - 'true'
+                  - '--in'
+                  - name
+                  - '--count'
+                  - 100
+        call:
+          arguments:
+          - GET
+          - /repos/:owner/:repo
+          - parameter: owner
+          - parameter: repo
+          - '--table'
+  search:
+      op: cmd_apicalls
+      summary: Search commands
+      subcommands:
+        userrepos:
+            parameters:
+                -   name: user
+                    required: true
+                -   name: q
+                    required: false
+            options:
+                -   &option_count
+                    name: count
+                    default: 30
+                    description: number of results
+                    aliases: [c]
+                -   name: fork
+                    in: query
+                    description: 'Filters whether forked repositories should be included (true) or only forked repositories should be returned (only).'
+                    type:
+                        enum: [true, only, false]
+                -   name: size
+                    in: query
+                    description: 'Finds repositories that match a certain size (in kilobytes).'
+                -   name: forks
+                    in: query
+                    description: 'Filters repositories based on the number of forks.'
+                -   name: created
+                    description: 'Filters repositories based on date of creation.'
+                -   name: updated
+                    description: 'Filters repositories based on date when they were last updated.'
+                -   name: in
+                    in: query
+                    description: 'With this qualifier you can restrict the search to just the repository name, description, readme, or any combination of these.'
+                    default: name
+                    type:
+                        enum: [name, description, readme]
+            call:
+              method: search_user_repos
+        users:
+            parameters:
+              - name: q
+                required: true
+                description: search string
+            options:
+              - *option_count
+              - name: in
+                in: query
+                description: 'With this qualifier you can restrict the search to just the username (login), public email (email), full name (fullname), or any combination of these.'
+                default: login
+                type:
+                  enum: [login, email, fullname]
+            call:
+              method: search_users
+

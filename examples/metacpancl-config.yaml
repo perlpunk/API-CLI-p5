@@ -1,0 +1,9 @@
+---
+paths:
+  /author/:author:
+    get:
+      output:
+        type: item
+        item:
+          fields: ["name", "pauseid", "dir", "updated", "email[0]", "country"]
+# vim:et:sts=2:sws=2:sw=2:foldmethod=indent

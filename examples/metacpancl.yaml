@@ -1,0 +1,19 @@
+---
+swagger: 2.0
+info:
+  title: MetaCPAN API
+  description: Unofficial MetaCPAN API specification
+  version: 3
+host: https://api.metacpan.org
+prefix: /v0
+paths:
+    /author/:author:
+      get:
+        description: Author information
+        parameters:
+          -
+            name: author
+            in: path
+            type: string
+            required: true
+# vim:et:sts=2:sws=2:sw=2:foldmethod=indent

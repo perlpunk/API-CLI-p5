@@ -1,0 +1,39 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+use 5.010;
+use Data::Dumper;
+use FindBin '$Bin';
+use lib "$Bin/../lib";
+use API::CLI::Github;
+my $spec = do { local $/; <DATA> };
+
+my $cli = API::CLI::Github->new({
+    api_spec_file => "$Bin/../github-swagger.yaml",
+    config_file => "$Bin/../github-config.yaml",
+    dir => "$ENV{HOME}/.githubcl",
+    appspec => \*DATA,
+    spec => $spec,
+});
+
+$cli->run;
+
+__DATA__
+---
+name: github
+version: 1
+title: Github API Client
+options:
+    -   name: yaml
+        type: bool
+        description: YAML output
+    -   name: table
+        type: bool
+        description: Formatted table output
+    -   name: dryrun
+        type: bool
+        description: Don't make API call
+    -   name: debug
+        type: bool
+        description: Debug
+commands: {}
