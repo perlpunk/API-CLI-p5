@@ -323,9 +323,12 @@ sub exec_command {
 
 sub create_client {
     my ($self) = @_;
-    my $host = $self->api_spec->{host};
-    my $schemes = $self->api_spec->{schemes};
-    $host = "$schemes->[0]://$host";
+    my $host = $ENV{API_CLI_HOST};
+    unless (defined $host) {
+        $host = $self->api_spec->{host};
+        my $schemes = $self->api_spec->{schemes};
+        $host = "$schemes->[0]://$host";
+    }
     say "HOST: $host" if $self->options->{debug};
     my $client = REST::Client->new({
             host    => $host,
