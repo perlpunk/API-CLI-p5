@@ -168,7 +168,7 @@ sub exec_command {
     my ($self, $cmd, $path) = @_;
     my $options = $self->options;
     my $paths = $self->api_spec->{paths};
-    my $path_prefix = $self->api_spec->{prefix};
+    my $path_prefix = $self->api_spec->{basePath};
     #    warn __PACKAGE__.':'.__LINE__.$".Data::Dumper->Dump([\@args], ['args']);
     my ($matched_path) = $self->find_matching_paths($cmd, $path);
     my $info = $paths->{ $matched_path }->{ lc $cmd };
