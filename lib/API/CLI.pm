@@ -168,7 +168,8 @@ sub exec_command {
     my ($self, $cmd, $path) = @_;
     my $options = $self->options;
     my $paths = $self->api_spec->{paths};
-    my $path_prefix = $self->api_spec->{basePath};
+    my $base_path = $self->api_spec->{basePath};
+    $base_path = '' if $base_path eq '/';
     #    warn __PACKAGE__.':'.__LINE__.$".Data::Dumper->Dump([\@args], ['args']);
     my ($matched_path) = $self->find_matching_paths($cmd, $path);
     my $info = $paths->{ $matched_path }->{ lc $cmd };
@@ -223,8 +224,8 @@ sub exec_command {
         $body = do { local $/; <$fh> };
         close $fh;
     }
-    if ($path_prefix) {
-        $path = $path_prefix . $path;
+    if ($base_path) {
+        $path = $base_path . $path;
     }
     say "REQUEST: $path" if $options->{debug};
 #    say "BODY: $body" if $body and $options->{debug};
