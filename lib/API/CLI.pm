@@ -147,13 +147,26 @@ sub apicall {
         }
     }
     $url->query_form(%query);
+
     my $req = HTTP::Request->new( $method => $url );
     $self->add_auth($req);
     warn __PACKAGE__.':'.__LINE__.": $method $url\n";
+
+    if ($method =~ m/^(POST|PUT|PATCH|DELETE)$/) {
+        my $data_file = $opt->{'data-file'};
+        if (defined $data_file) {
+            open my $fh, '<', $data_file or die "Could not open '$data_file': $!";
+            my $data = do { local $/; <$fh> };
+            close $fh;
+            $req->content($data);
+        }
+    }
+
     my $res = $ua->request($req);
     my $code = $res->code;
     my $content = $res->decoded_content;
     my $status = $res->status_line;
+
     my $out = "Response: $status\n";
     my $data;
     if ($res->is_success) {
@@ -177,3 +190,6 @@ options:
   - name: debug
     type: bool
     description: Debug
+  - name: data-file
+    type: file
+    description: File with data for POST/PUT/PATCH/DELETE requests

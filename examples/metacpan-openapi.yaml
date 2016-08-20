@@ -108,4 +108,15 @@ paths:
           type: integer
           description: how many results
 
+  /file:
+    post:
+      description: file
+      parameters:
+        -
+          name: body
+          in: body
+          type: object
+          required: true
+          description: query
+
 # vim:et:sts=2:sws=2:sw=2:foldmethod=indent
