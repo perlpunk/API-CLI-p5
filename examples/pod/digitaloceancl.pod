@@ -1,0 +1,99 @@
+=head1 NAME
+
+digitaloceancl - generic DigitalOcean API client
+
+=head1 ABSTRACT
+
+
+
+=head1 DESCRIPTION
+
+Unofficial DigitalOcean API specification
+
+=head2 GLOBAL OPTIONS
+
+    --debug        Debug                                            
+    --data-file    File with data for POST/PUT/PATCH/DELETE requests
+    --help -h      Show command help (flag)                         
+
+
+=head2 SUBCOMMANDS
+
+=head3  GET
+
+    digitaloceancl  GET <subcommands>
+
+GET call
+
+
+=head3 GET /account
+
+    digitaloceancl GET /account
+
+Account information
+
+
+=head3 GET /droplets
+
+    digitaloceancl GET /droplets
+
+List all droplets
+
+
+=head3 GET /droplets/:id
+
+    digitaloceancl GET /droplets/:id <id>
+
+Retrieve a droplet by id
+
+Parameters:
+
+    id  *  
+
+=head3  POST
+
+    digitaloceancl  POST <subcommands>
+
+POST call
+
+
+=head3 POST /droplets/:id/actions
+
+    digitaloceancl POST /droplets/:id/actions
+
+Trigger droplet action
+
+
+=head3  help
+
+    digitaloceancl  help <subcommands> [options]
+
+Show command help
+
+Options:
+
+    --all     (flag)
+
+
+=head3  _complete
+
+    digitaloceancl  _complete [options]
+
+Generate self completion
+
+Options:
+
+    --name    name of the program
+    --zsh     for zsh (flag)     
+    --bash    for bash (flag)    
+
+
+=head3  _pod
+
+    digitaloceancl  _pod
+
+Generate self pod
+
+
+
+

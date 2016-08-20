@@ -1,0 +1,12 @@
+generate_pod:
+	perl examples/bin/metacpancl _pod > examples/pod/metacpancl.pod
+	perl examples/bin/githubcl _pod > examples/pod/githubcl.pod
+	perl examples/bin/digitaloceancl _pod > examples/pod/digitaloceancl.pod
+
+generate_completion:
+	perl examples/bin/metacpancl _complete --bash > examples/bash/metacpancl.bash
+	perl examples/bin/metacpancl _complete --zsh > examples/zsh/_metacpancl
+	perl examples/bin/githubcl _complete --bash > examples/bash/githubcl.bash
+	perl examples/bin/githubcl _complete --zsh > examples/zsh/_githubcl
+	perl examples/bin/digitaloceancl _complete --bash > examples/bash/digitaloceancl.bash
+	perl examples/bin/digitaloceancl _complete --zsh > examples/zsh/_digitaloceancl
