@@ -1,0 +1,22 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+use 5.010;
+use Data::Dumper;
+use FindBin '$Bin';
+use lib "$Bin/../../lib";
+
+package API::CLI::DigitalOcean;
+use base 'API::CLI';
+
+package main;
+use YAML::XS qw/ LoadFile /;
+
+my $openapi_file = "$Bin/../digitalocean-openapi.yaml";
+my $openapi = LoadFile($openapi_file);
+my $cli = API::CLI::DigitalOcean->new({
+    openapi => $openapi,
+    name => "digitaloceancl",
+    dir => "$ENV{HOME}/.digitaloceancl",
+});
+$cli->run;
