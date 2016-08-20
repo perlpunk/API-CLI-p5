@@ -6,12 +6,18 @@ use Data::Dumper;
 use FindBin '$Bin';
 use lib "$Bin/../../lib";
 
-use API::CLI;
+package API::CLI::MetaCPAN;
+use base 'API::CLI';
+
+sub add_auth {
+}
+
+package main;
 use YAML::XS qw/ LoadFile /;
 
 my $openapi_file = "$Bin/../metacpan-openapi.yaml";
 my $openapi = LoadFile($openapi_file);
-my $cli = API::CLI->new({
+my $cli = API::CLI::MetaCPAN->new({
     openapi => $openapi,
     name => "metacpancl",
 });
