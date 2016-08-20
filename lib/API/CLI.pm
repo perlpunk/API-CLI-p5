@@ -53,7 +53,8 @@ sub build_appspec {
     my $skeleton = $appspec_skeleton;
 
     my $openapi = $self->openapi;
-    my $spec = $skeleton;
+    my $spec = $self->spec || {};
+    $spec = { %$skeleton, %$spec };
 
     my $paths = $openapi->{paths};
     my $subcommands = $spec->{subcommands} = {};
@@ -64,7 +65,7 @@ sub build_appspec {
 
             my $config = $methods->{ $method };
             $spec->{name} = $args{name};
-            $spec->{title} = $openapi->{info}->{title};
+            $spec->{title} //= $openapi->{info}->{title};
             $spec->{description} = $openapi->{info}->{description};
 
             my @parameters;

@@ -14,8 +14,11 @@ use YAML::XS qw/ LoadFile /;
 
 my $openapi_file = "$Bin/../digitalocean-openapi.yaml";
 my $openapi = LoadFile($openapi_file);
+my $appspec_file = "$Bin/../digitalocean-appspec.yaml";
+my $appspec = LoadFile($appspec_file);
 my $cli = API::CLI::DigitalOcean->new({
     openapi => $openapi,
+    spec => $appspec,
     name => "digitaloceancl",
     dir => "$ENV{HOME}/.digitaloceancl",
 });
