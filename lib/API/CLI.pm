@@ -10,6 +10,7 @@ use YAML::XS ();
 use LWP::UserAgent;
 use HTTP::Request;
 use App::Spec;
+use JSON::XS;
 
 use Moo;
 
@@ -153,13 +154,17 @@ sub apicall {
     my $code = $res->code;
     my $content = $res->decoded_content;
     my $status = $res->status_line;
-    my $out = "Response: $status";
+    my $out = "Response: $status\n";
+    my $data;
     if ($res->is_success) {
+        my $coder = JSON::XS->new->ascii->pretty->allow_nonref;
+        $data = $coder->decode($content);
+        $content = $coder->encode($data);
     }
     else {
         $out = $self->error($out);
     }
-    say $out;
+    warn $out;
     say $content;
 }
 
