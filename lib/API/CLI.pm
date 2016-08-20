@@ -13,6 +13,7 @@ use App::Spec;
 
 use Moo;
 
+has dir => ( is => 'ro' );
 has openapi => ( is => 'ro' );
 has spec => ( is => 'rw' );
 
@@ -25,6 +26,20 @@ sub BUILD {
         name => $args->{name},
     );
 }
+
+sub add_auth {
+    my ($self, $req) = @_;
+    my $appconfig = $self->read_appconfig;
+    my $token = $appconfig->{token};
+    $req->header(Authorization => "Bearer $token");
+}
+
+sub read_appconfig {
+    my ($self) = @_;
+    my $dir = $self->dir;
+    my $appconfig = YAML::XS::LoadFile("$dir/config.yaml");
+}
+
 
 sub build_appspec {
     my ($self, %args) = @_;
@@ -132,6 +147,7 @@ sub apicall {
     }
     $url->query_form(%query);
     my $req = HTTP::Request->new( $method => $url );
+    $self->add_auth($req);
     warn __PACKAGE__.':'.__LINE__.": $method $url\n";
     my $res = $ua->request($req);
     my $code = $res->code;

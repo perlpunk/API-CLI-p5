@@ -14,5 +14,6 @@ my $openapi = LoadFile($openapi_file);
 my $cli = API::CLI->new({
     openapi => $openapi,
     name => "githubcl",
+    dir => "$ENV{HOME}/.githubcl",
 });
 $cli->run;
