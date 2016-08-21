@@ -11,6 +11,7 @@ use LWP::UserAgent;
 use HTTP::Request;
 use App::Spec;
 use JSON::XS;
+use API::CLI::Request;
 
 use Moo;
 
@@ -129,29 +130,20 @@ sub apicall {
     my $params = $self->parameters;
     my $opt = $self->options;
     warn __PACKAGE__.':'.__LINE__.": apicall($method $path)\n";
-    $path =~ s{(?::(\w+)|\{(\w+)\})}{$params->{ $1 // $2 }}g;
-    warn __PACKAGE__.':'.__LINE__.": apicall($method $path)\n";
     warn __PACKAGE__.':'.__LINE__.$".Data::Dumper->Dump([\$params], ['params']);
     warn __PACKAGE__.':'.__LINE__.$".Data::Dumper->Dump([\$opt], ['opt']);
+    $path =~ s{(?::(\w+)|\{(\w+)\})}{$params->{ $1 // $2 }}g;
+    warn __PACKAGE__.':'.__LINE__.": apicall($method $path)\n";
 
-    my $host = $self->openapi->{host};
-    my $scheme = $self->openapi->{schemes}->[0];
-    my $ua = LWP::UserAgent->new;
-    my $basePath = $self->openapi->{basePath} // '';
-    $basePath = '' if $basePath eq '/';
-    my $url = URI->new("$scheme://$host$basePath$path");
-    my %query;
-    for my $name (sort keys %$opt) {
-        my $value = $opt->{ $name };
-        if ($name =~ s/^q-//) {
-            $query{ $name } = $value;
-        }
-    }
-    $url->query_form(%query);
+    my $REQ = API::CLI::Request->from_openapi(
+        openapi => $self->openapi,
+        method => $method,
+        path => $path,
+        options => $opt,
+        parameters => $params,
+    );
 
-    my $req = HTTP::Request->new( $method => $url );
-    $self->add_auth($req);
-    warn __PACKAGE__.':'.__LINE__.": $method $url\n";
+    $self->add_auth($REQ);
 
     if ($method =~ m/^(POST|PUT|PATCH|DELETE)$/) {
         my $data_file = $opt->{'data-file'};
@@ -159,27 +151,17 @@ sub apicall {
             open my $fh, '<', $data_file or die "Could not open '$data_file': $!";
             my $data = do { local $/; <$fh> };
             close $fh;
-            $req->content($data);
+            $REQ->content($data);
         }
     }
 
-    my $res = $ua->request($req);
-    my $code = $res->code;
-    my $content = $res->decoded_content;
-    my $status = $res->status_line;
-
-    my $out = "Response: $status\n";
-    my $data;
-    if ($res->is_success) {
-        my $coder = JSON::XS->new->ascii->pretty->allow_nonref;
-        $data = $coder->decode($content);
-        $content = $coder->encode($data);
-    }
-    else {
+    my ($ok, $out, $content) = $REQ->request;
+    unless ($ok) {
         $out = $self->error($out);
     }
     warn $out;
     say $content;
+
 }
 
 1;
