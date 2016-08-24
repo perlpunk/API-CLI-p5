@@ -15,7 +15,7 @@ _githubcl() {
 
         case $state in
         cmd1)
-            _alternative 'args:cmd2:((DELETE\:"DELETE call" GET\:"GET call" PATCH\:"PATCH call" POST\:"POST call" PUT\:"PUT call" _complete\:"Generate self completion" _pod\:"Generate self pod" help\:"Show command help"))'
+            _alternative 'args:cmd2:((DELETE\:"DELETE call" GET\:"GET call" PATCH\:"PATCH call" POST\:"POST call" PUT\:"PUT call" help\:"Show command help"))'
         ;;
 
         args)
@@ -5964,7 +5964,7 @@ Example: "2012-10-09T23:39:01Z".
 
                 case $state in
                 cmd2)
-                    _alternative 'args:cmd3:((DELETE GET PATCH POST PUT _complete _pod))'
+                    _alternative 'args:cmd3:((DELETE GET PATCH POST PUT))'
                 ;;
 
                 args)

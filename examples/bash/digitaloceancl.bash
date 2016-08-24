@@ -23,7 +23,7 @@ _digitaloceancl() {
 
     0)
         __comp_current_options || return
-        __digitaloceancl_dynamic_comp 'commands' 'GET'$'\t''GET call'$'\n''POST'$'\t''POST call'$'\n''_complete'$'\t''Generate self completion'$'\n''_pod'$'\t''Generate self pod'$'\n''help'$'\t''Show command help'
+        __digitaloceancl_dynamic_comp 'commands' 'GET'$'\t''GET call'$'\n''POST'$'\t''POST call'$'\n''help'$'\t''Show command help'
 
     ;;
     *)
@@ -138,7 +138,7 @@ _digitaloceancl() {
 
         1)
             __comp_current_options || return
-            __digitaloceancl_dynamic_comp 'commands' 'GET'$'\n''POST'$'\n''_complete'$'\n''_pod'
+            __digitaloceancl_dynamic_comp 'commands' 'GET'$'\n''POST'
 
         ;;
         *)

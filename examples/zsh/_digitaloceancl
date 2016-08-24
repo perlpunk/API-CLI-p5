@@ -15,7 +15,7 @@ _digitaloceancl() {
 
         case $state in
         cmd1)
-            _alternative 'args:cmd2:((GET\:"GET call" POST\:"POST call" _complete\:"Generate self completion" _pod\:"Generate self pod" help\:"Show command help"))'
+            _alternative 'args:cmd2:((GET\:"GET call" POST\:"POST call" help\:"Show command help"))'
         ;;
 
         args)
@@ -169,7 +169,7 @@ _digitaloceancl() {
 
                 case $state in
                 cmd2)
-                    _alternative 'args:cmd3:((GET POST _complete _pod))'
+                    _alternative 'args:cmd3:((GET POST))'
                 ;;
 
                 args)

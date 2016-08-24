@@ -23,7 +23,7 @@ _githubcl() {
 
     0)
         __comp_current_options || return
-        __githubcl_dynamic_comp 'commands' 'DELETE'$'\t''DELETE call'$'\n''GET'$'\t''GET call'$'\n''PATCH'$'\t''PATCH call'$'\n''POST'$'\t''POST call'$'\n''PUT'$'\t''PUT call'$'\n''_complete'$'\t''Generate self completion'$'\n''_pod'$'\t''Generate self pod'$'\n''help'$'\t''Show command help'
+        __githubcl_dynamic_comp 'commands' 'DELETE'$'\t''DELETE call'$'\n''GET'$'\t''GET call'$'\n''PATCH'$'\t''PATCH call'$'\n''POST'$'\t''POST call'$'\n''PUT'$'\t''PUT call'$'\n''help'$'\t''Show command help'
 
     ;;
     *)
@@ -5685,7 +5685,7 @@ Example: "2012-10-09T23:39:01Z".
 
         1)
             __comp_current_options || return
-            __githubcl_dynamic_comp 'commands' 'DELETE'$'\n''GET'$'\n''PATCH'$'\n''POST'$'\n''PUT'$'\n''_complete'$'\n''_pod'
+            __githubcl_dynamic_comp 'commands' 'DELETE'$'\n''GET'$'\n''PATCH'$'\n''POST'$'\n''PUT'
 
         ;;
         *)
