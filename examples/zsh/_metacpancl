@@ -32,7 +32,7 @@ _metacpancl() {
 
                 case $state in
                 cmd2)
-                    _alternative 'args:cmd3:((/author/\\:author\:"Author information" /distribution/\\:distribution\:"Distribution information not specific to a version" /module/\\:module\:"Module information" /pod/\\:module\:"Module POD" /release/\\:author/\\:release\:"Release information" /release/\\:distribution\:"Release information" /release/_search\:"Search releases"))'
+                    _alternative 'args:cmd3:((/author/\\:author\:"Author information" /distribution/\\:distribution\:"Distribution information not specific to a version..." /module/\\:module\:"Module information" /pod/\\:module\:"Module POD" /release/\\:author/\\:release\:"Release information" /release/\\:distribution\:"Release information" /release/_search\:"Search releases"))'
                 ;;
 
                 args)

@@ -37,7 +37,7 @@ _metacpancl() {
 
         1)
             __comp_current_options || return
-            __metacpancl_dynamic_comp 'commands' '/author/:author'$'\t''Author information'$'\n''/distribution/:distribution'$'\t''Distribution information not specific to a version'$'\n''/module/:module'$'\t''Module information'$'\n''/pod/:module'$'\t''Module POD'$'\n''/release/:author/:release'$'\t''Release information'$'\n''/release/:distribution'$'\t''Release information'$'\n''/release/_search'$'\t''Search releases'
+            __metacpancl_dynamic_comp 'commands' '/author/:author'$'\t''Author information'$'\n''/distribution/:distribution'$'\t''Distribution information not specific to a version...'$'\n''/module/:module'$'\t''Module information'$'\n''/pod/:module'$'\t''Module POD'$'\n''/release/:author/:release'$'\t''Release information'$'\n''/release/:distribution'$'\t''Release information'$'\n''/release/_search'$'\t''Search releases'
 
         ;;
         *)

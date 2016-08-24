@@ -90,6 +90,9 @@ sub build_appspec {
             };
             my $desc = $config->{description};
             $desc =~ s/\n.*//s;
+            if (length $desc > 30) {
+                $desc = substr($desc, 0, 50) . '...';
+            }
             my $subcmd = $apicall->{subcommands}->{ $path } ||= {
                 summary => $desc,
                 parameters => \@parameters,
