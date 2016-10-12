@@ -43,8 +43,11 @@ _digitaloceancl() {
                         _arguments -s -C \
                             '1: :->cmd1' \
                             '2: :->cmd2' \
-                            '--debug[Debug]:debug' \
                             '--data-file[File with data for POST/PUT/PATCH/DELETE requests]:data-file:_files' \
+                            '--debug[debug]' \
+                            '-d[debug]' \
+                            '--verbose[verbose]' \
+                            '-v[verbose]' \
                             '--help[Show command help]' \
                             '-h[Show command help]' \
                             && ret=0
@@ -57,8 +60,11 @@ _digitaloceancl() {
                         _arguments -s -C \
                             '1: :->cmd1' \
                             '2: :->cmd2' \
-                            '--debug[Debug]:debug' \
                             '--data-file[File with data for POST/PUT/PATCH/DELETE requests]:data-file:_files' \
+                            '--debug[debug]' \
+                            '-d[debug]' \
+                            '--verbose[verbose]' \
+                            '-v[verbose]' \
                             '--help[Show command help]' \
                             '-h[Show command help]' \
                             && ret=0
@@ -72,8 +78,11 @@ _digitaloceancl() {
                             '1: :->cmd1' \
                             '2: :->cmd2' \
                             '3: :->id' \
-                            '--debug[Debug]:debug' \
                             '--data-file[File with data for POST/PUT/PATCH/DELETE requests]:data-file:_files' \
+                            '--debug[debug]' \
+                            '-d[debug]' \
+                            '--verbose[verbose]' \
+                            '-v[verbose]' \
                             '--help[Show command help]' \
                             '-h[Show command help]' \
                             && ret=0
@@ -114,8 +123,11 @@ _digitaloceancl() {
                         _arguments -s -C \
                             '1: :->cmd1' \
                             '2: :->cmd2' \
-                            '--debug[Debug]:debug' \
                             '--data-file[File with data for POST/PUT/PATCH/DELETE requests]:data-file:_files' \
+                            '--debug[debug]' \
+                            '-d[debug]' \
+                            '--verbose[verbose]' \
+                            '-v[verbose]' \
                             '--help[Show command help]' \
                             '-h[Show command help]' \
                             && ret=0
@@ -133,8 +145,11 @@ _digitaloceancl() {
                 # ---- Command: _complete
                 _arguments -s -C \
                     '1: :->cmd1' \
-                    '--debug[Debug]:debug' \
                     '--data-file[File with data for POST/PUT/PATCH/DELETE requests]:data-file:_files' \
+                    '--debug[debug]' \
+                    '-d[debug]' \
+                    '--verbose[verbose]' \
+                    '-v[verbose]' \
                     '--help[Show command help]' \
                     '-h[Show command help]' \
                     '--name[name of the program]:name' \
@@ -149,8 +164,11 @@ _digitaloceancl() {
                 # ---- Command: _pod
                 _arguments -s -C \
                     '1: :->cmd1' \
-                    '--debug[Debug]:debug' \
                     '--data-file[File with data for POST/PUT/PATCH/DELETE requests]:data-file:_files' \
+                    '--debug[debug]' \
+                    '-d[debug]' \
+                    '--verbose[verbose]' \
+                    '-v[verbose]' \
                     '--help[Show command help]' \
                     '-h[Show command help]' \
                     && ret=0
@@ -199,8 +217,11 @@ _digitaloceancl() {
                                     '1: :->cmd1' \
                                     '2: :->cmd2' \
                                     '3: :->cmd3' \
-                                    '--debug[Debug]:debug' \
                                     '--data-file[File with data for POST/PUT/PATCH/DELETE requests]:data-file:_files' \
+                                    '--debug[debug]' \
+                                    '-d[debug]' \
+                                    '--verbose[verbose]' \
+                                    '-v[verbose]' \
                                     '--help[Show command help]' \
                                     '-h[Show command help]' \
                                     '--all[]' \
@@ -215,8 +236,11 @@ _digitaloceancl() {
                                     '1: :->cmd1' \
                                     '2: :->cmd2' \
                                     '3: :->cmd3' \
-                                    '--debug[Debug]:debug' \
                                     '--data-file[File with data for POST/PUT/PATCH/DELETE requests]:data-file:_files' \
+                                    '--debug[debug]' \
+                                    '-d[debug]' \
+                                    '--verbose[verbose]' \
+                                    '-v[verbose]' \
                                     '--help[Show command help]' \
                                     '-h[Show command help]' \
                                     '--all[]' \
@@ -231,8 +255,11 @@ _digitaloceancl() {
                                     '1: :->cmd1' \
                                     '2: :->cmd2' \
                                     '3: :->cmd3' \
-                                    '--debug[Debug]:debug' \
                                     '--data-file[File with data for POST/PUT/PATCH/DELETE requests]:data-file:_files' \
+                                    '--debug[debug]' \
+                                    '-d[debug]' \
+                                    '--verbose[verbose]' \
+                                    '-v[verbose]' \
                                     '--help[Show command help]' \
                                     '-h[Show command help]' \
                                     '--all[]' \
@@ -271,8 +298,11 @@ _digitaloceancl() {
                                     '1: :->cmd1' \
                                     '2: :->cmd2' \
                                     '3: :->cmd3' \
-                                    '--debug[Debug]:debug' \
                                     '--data-file[File with data for POST/PUT/PATCH/DELETE requests]:data-file:_files' \
+                                    '--debug[debug]' \
+                                    '-d[debug]' \
+                                    '--verbose[verbose]' \
+                                    '-v[verbose]' \
                                     '--help[Show command help]' \
                                     '-h[Show command help]' \
                                     '--all[]' \
@@ -292,8 +322,11 @@ _digitaloceancl() {
                         _arguments -s -C \
                             '1: :->cmd1' \
                             '2: :->cmd2' \
-                            '--debug[Debug]:debug' \
                             '--data-file[File with data for POST/PUT/PATCH/DELETE requests]:data-file:_files' \
+                            '--debug[debug]' \
+                            '-d[debug]' \
+                            '--verbose[verbose]' \
+                            '-v[verbose]' \
                             '--help[Show command help]' \
                             '-h[Show command help]' \
                             '--all[]' \
@@ -307,8 +340,11 @@ _digitaloceancl() {
                         _arguments -s -C \
                             '1: :->cmd1' \
                             '2: :->cmd2' \
-                            '--debug[Debug]:debug' \
                             '--data-file[File with data for POST/PUT/PATCH/DELETE requests]:data-file:_files' \
+                            '--debug[debug]' \
+                            '-d[debug]' \
+                            '--verbose[verbose]' \
+                            '-v[verbose]' \
                             '--help[Show command help]' \
                             '-h[Show command help]' \
                             '--all[]' \

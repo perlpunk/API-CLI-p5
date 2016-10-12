@@ -6,6 +6,8 @@ use Data::Dumper;
 use FindBin '$Bin';
 use lib "$Bin/../../lib";
 
+use API::CLI::App::Spec;
+
 package API::CLI::MetaCPAN;
 use base 'API::CLI';
 
@@ -13,12 +15,13 @@ sub add_auth {
 }
 
 package main;
-use YAML::XS qw/ LoadFile /;
 
-my $openapi_file = "$Bin/../metacpan-openapi.yaml";
-my $openapi = LoadFile($openapi_file);
-my $cli = API::CLI::MetaCPAN->new({
-    openapi => $openapi,
-    name => "metacpancl",
-});
-$cli->run;
+my $appspec_file = "$Bin/../metacpancl-appspec.yaml";
+my $spec = API::CLI::App::Spec->read($appspec_file);
+my $runner = App::Spec::Run->new(
+    spec => $spec,
+    cmd => API::CLI::MetaCPAN->new(
+        dir => "$ENV{HOME}/.githubcl",
+    ),
+);
+$runner->run;

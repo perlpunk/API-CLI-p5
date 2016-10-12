@@ -1,0 +1,25 @@
+name: apicli
+appspec: { version: '0.001' }
+class: API::CLI::Cmd
+title: 'API::CLI utils'
+description: 'API::CLI utilities'
+options:
+subcommands:
+    appspec:
+      summary: "Generate App::Spec file"
+      op: "appspec_openapi"
+      description: "This will generate an App::Spec file"
+      subcommands:
+        openapi:
+          options:
+          - name: out
+            summary: Output file
+          - name: name
+            summary: appname
+            required: true
+          - name: class
+            summary: Class name
+          parameters:
+          - name: "file"
+            summary: "openapi file"
+            required: true

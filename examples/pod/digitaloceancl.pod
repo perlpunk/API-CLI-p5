@@ -1,6 +1,6 @@
 =head1 NAME
 
-digitaloceancl - generic DigitalOcean API client
+digitaloceancl - DigitalOcean API
 
 =head1 ABSTRACT
 
@@ -12,9 +12,10 @@ Unofficial DigitalOcean API specification
 
 =head2 GLOBAL OPTIONS
 
-    --debug        Debug                                            
-    --data-file    File with data for POST/PUT/PATCH/DELETE requests
-    --help -h      Show command help (flag)                         
+    --data-file     File with data for POST/PUT/PATCH/DELETE requests
+    --debug -d      debug (flag)                                     
+    --verbose -v    verbose (flag)                                   
+    --help -h       Show command help (flag)                         
 
 
 =head2 SUBCOMMANDS

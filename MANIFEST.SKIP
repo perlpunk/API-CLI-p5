@@ -1,4 +1,4 @@
-*.swp
 cover_db
-dev
 pod2htmd.tmp
+dev
+local

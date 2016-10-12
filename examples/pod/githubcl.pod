@@ -13,9 +13,10 @@ Powerful collaboration, code review, and code management for open source and pri
 
 =head2 GLOBAL OPTIONS
 
-    --debug        Debug                                            
-    --data-file    File with data for POST/PUT/PATCH/DELETE requests
-    --help -h      Show command help (flag)                         
+    --data-file     File with data for POST/PUT/PATCH/DELETE requests
+    --debug -d      debug (flag)                                     
+    --verbose -v    verbose (flag)                                   
+    --help -h       Show command help (flag)                         
 
 
 =head2 SUBCOMMANDS
@@ -189,7 +190,7 @@ Parameters:
 
     githubcl DELETE /repos/{owner}/{repo}/issues/{number}/labels <owner> <repo> <number>
 
-Remove all labels from an issue.
+Remove all labels from an issue....
 
 Parameters:
 
@@ -274,7 +275,7 @@ Parameters:
 
     githubcl DELETE /repos/{owner}/{repo}/releases/{id} <owner> <repo> <id>
 
-Users with push access to the repository can delete a release.
+Users with push access to the repository can delet...
 
 Parameters:
 
@@ -286,7 +287,7 @@ Parameters:
 
     githubcl DELETE /repos/{owner}/{repo}/subscription <owner> <repo>
 
-Delete a Repository Subscription.
+Delete a Repository Subscription....
 
 Parameters:
 
@@ -307,7 +308,7 @@ Parameters:
 
     githubcl DELETE /teams/{teamId}/members/{username} <teamId> <username>
 
-The "Remove team member" API is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Remove team membership API instead. It allows you to remove both active and pending memberships.
+The "Remove team member" API is deprecated and is ...
 
 Parameters:
 
@@ -329,7 +330,7 @@ Parameters:
 
     githubcl DELETE /teams/{teamId}/repos/{owner}/{repo} <teamId> <owner> <repo>
 
-In order to remove a repository from a team, the authenticated user must be an owner of the org that the team is associated with. NOTE: This does not delete the repository, it just removes it from the team.
+In order to remove a repository from a team, the a...
 
 Parameters:
 
@@ -358,7 +359,7 @@ Parameters:
 
     githubcl DELETE /user/keys/{keyId} <keyId>
 
-Delete a public key. Removes a public key. Requires that you are authenticated via Basic Auth or via OAuth with at least admin:public_key scope.
+Delete a public key. Removes a public key. Require...
 
 Parameters:
 
@@ -397,7 +398,7 @@ GET call
 
     githubcl GET /emojis
 
-Lists all the emojis available to use on GitHub.
+Lists all the emojis available to use on GitHub....
 
 
 =head3 GET /events
@@ -418,7 +419,7 @@ List Feeds.
 
     githubcl GET /gists [options]
 
-List the authenticated user's gists or if called anonymously, this will
+List the authenticated user's gists or if called a...
 
 Options:
 
@@ -442,7 +443,7 @@ Options:
 
     githubcl GET /gists/starred [options]
 
-List the authenticated user's starred gists.
+List the authenticated user's starred gists....
 
 Options:
 
@@ -530,7 +531,7 @@ Options:
 
     githubcl GET /legacy/issues/search/{owner}/{repository}/{state}/{keyword} <keyword> <state> <owner> <repository>
 
-Find issues by state and keyword.
+Find issues by state and keyword....
 
 Parameters:
 
@@ -543,7 +544,7 @@ Parameters:
 
     githubcl GET /legacy/repos/search/{keyword} [options] <keyword>
 
-Find repositories by keyword. Note, this legacy method does not follow the v3 pagination pattern. This method returns up to 100 results per page and pages can be fetched using the start_page parameter.
+Find repositories by keyword. Note, this legacy me...
 
 Options:
 
@@ -560,7 +561,7 @@ Parameters:
 
     githubcl GET /legacy/user/email/{email} <email>
 
-This API call is added for compatibility reasons only.
+This API call is added for compatibility reasons o...
 
 Parameters:
 
@@ -586,14 +587,14 @@ Parameters:
 
     githubcl GET /meta
 
-This gives some information about GitHub.com, the service.
+This gives some information about GitHub.com, the ...
 
 
 =head3 GET /networks/{owner}/{repo}/events
 
     githubcl GET /networks/{owner}/{repo}/events <owner> <repo>
 
-List public events for a network of repositories.
+List public events for a network of repositories....
 
 Parameters:
 
@@ -649,7 +650,7 @@ Parameters:
 
     githubcl GET /orgs/{org}/events <org>
 
-List public events for an organization.
+List public events for an organization....
 
 Parameters:
 
@@ -690,7 +691,7 @@ Parameters:
 
     githubcl GET /orgs/{org}/members/{username} <org> <username>
 
-Check if a user is, publicly or privately, a member of the organization.
+Check if a user is, publicly or privately, a membe...
 
 Parameters:
 
@@ -722,7 +723,7 @@ Parameters:
 
     githubcl GET /orgs/{org}/repos [options] <org>
 
-List repositories for the specified org.
+List repositories for the specified org....
 
 Options:
 
@@ -746,7 +747,7 @@ Parameters:
 
     githubcl GET /rate_limit
 
-Get your current rate limit status
+Get your current rate limit status...
 
 
 =head3 GET /repos/{owner}/{repo}
@@ -821,7 +822,7 @@ Parameters:
 
     githubcl GET /repos/{owner}/{repo}/collaborators/{user} <owner> <repo> <user>
 
-Check if user is a collaborator
+Check if user is a collaborator...
 
 Parameters:
 
@@ -833,7 +834,7 @@ Parameters:
 
     githubcl GET /repos/{owner}/{repo}/comments <owner> <repo>
 
-List commit comments for a repository.
+List commit comments for a repository....
 
 Parameters:
 
@@ -876,7 +877,7 @@ Parameters:
 
     githubcl GET /repos/{owner}/{repo}/commits/{ref}/status <owner> <repo> <ref>
 
-Get the combined Status for a specific Ref
+Get the combined Status for a specific Ref...
 
 Parameters:
 
@@ -900,7 +901,7 @@ Parameters:
 
     githubcl GET /repos/{owner}/{repo}/commits/{shaCode}/comments <owner> <repo> <shaCode>
 
-List comments for a single commitList comments for a single commit.
+List comments for a single commitList comments for...
 
 Parameters:
 
@@ -957,7 +958,7 @@ Parameters:
 
     githubcl GET /repos/{owner}/{repo}/deployments <owner> <repo>
 
-Users with pull access can view deployments for a repository
+Users with pull access can view deployments for a ...
 
 Parameters:
 
@@ -968,7 +969,7 @@ Parameters:
 
     githubcl GET /repos/{owner}/{repo}/deployments/{id}/statuses <owner> <repo> <id>
 
-Users with pull access can view deployment statuses for a deployment
+Users with pull access can view deployment statuse...
 
 Parameters:
 
@@ -980,7 +981,7 @@ Parameters:
 
     githubcl GET /repos/{owner}/{repo}/downloads <owner> <repo>
 
-Deprecated. List downloads for a repository.
+Deprecated. List downloads for a repository....
 
 Parameters:
 
@@ -991,7 +992,7 @@ Parameters:
 
     githubcl GET /repos/{owner}/{repo}/downloads/{downloadId} <owner> <repo> <downloadId>
 
-Deprecated. Get a single download.
+Deprecated. Get a single download....
 
 Parameters:
 
@@ -1179,7 +1180,7 @@ Parameters:
 
     githubcl GET /repos/{owner}/{repo}/issues/events <owner> <repo>
 
-List issue events for a repository.
+List issue events for a repository....
 
 Parameters:
 
@@ -1273,7 +1274,7 @@ Parameters:
 
     githubcl GET /repos/{owner}/{repo}/labels <owner> <repo>
 
-List all labels for this repository.
+List all labels for this repository....
 
 Parameters:
 
@@ -1307,7 +1308,7 @@ Parameters:
 
     githubcl GET /repos/{owner}/{repo}/milestones [options] <owner> <repo>
 
-List milestones for a repository.
+List milestones for a repository....
 
 Options:
 
@@ -1336,7 +1337,7 @@ Parameters:
 
     githubcl GET /repos/{owner}/{repo}/milestones/{number}/labels <owner> <repo> <number>
 
-Get labels for every issue in a milestone.
+Get labels for every issue in a milestone....
 
 Parameters:
 
@@ -1348,7 +1349,7 @@ Parameters:
 
     githubcl GET /repos/{owner}/{repo}/notifications [options] <owner> <repo>
 
-List your notifications in a repository
+List your notifications in a repository...
 
 Options:
 
@@ -1427,7 +1428,7 @@ Parameters:
 
     githubcl GET /repos/{owner}/{repo}/pulls/{number}/comments <owner> <repo> <number>
 
-List comments on a pull request.
+List comments on a pull request....
 
 Parameters:
 
@@ -1439,7 +1440,7 @@ Parameters:
 
     githubcl GET /repos/{owner}/{repo}/pulls/{number}/commits <owner> <repo> <number>
 
-List commits on a pull request.
+List commits on a pull request....
 
 Parameters:
 
@@ -1463,7 +1464,7 @@ Parameters:
 
     githubcl GET /repos/{owner}/{repo}/pulls/{number}/merge <owner> <repo> <number>
 
-Get if a pull request has been merged.
+Get if a pull request has been merged....
 
 Parameters:
 
@@ -1490,7 +1491,7 @@ Parameters:
 
     githubcl GET /repos/{owner}/{repo}/releases <owner> <repo>
 
-Users with push access to the repository will receive all releases (i.e., published releases and draft releases). Users with pull access will receive published releases only
+Users with push access to the repository will rece...
 
 Parameters:
 
@@ -1548,7 +1549,7 @@ Parameters:
 
     githubcl GET /repos/{owner}/{repo}/stats/code_frequency <owner> <repo>
 
-Get the number of additions and deletions per week.
+Get the number of additions and deletions per week...
 
 Parameters:
 
@@ -1559,7 +1560,7 @@ Parameters:
 
     githubcl GET /repos/{owner}/{repo}/stats/commit_activity <owner> <repo>
 
-Get the last year of commit activity data.
+Get the last year of commit activity data....
 
 Parameters:
 
@@ -1570,7 +1571,7 @@ Parameters:
 
     githubcl GET /repos/{owner}/{repo}/stats/contributors <owner> <repo>
 
-Get contributors list with additions, deletions, and commit counts.
+Get contributors list with additions, deletions, a...
 
 Parameters:
 
@@ -1581,7 +1582,7 @@ Parameters:
 
     githubcl GET /repos/{owner}/{repo}/stats/participation <owner> <repo>
 
-Get the weekly commit count for the repo owner and everyone else.
+Get the weekly commit count for the repo owner and...
 
 Parameters:
 
@@ -1592,7 +1593,7 @@ Parameters:
 
     githubcl GET /repos/{owner}/{repo}/stats/punch_card <owner> <repo>
 
-Get the number of commits per hour in each day.
+Get the number of commits per hour in each day....
 
 Parameters:
 
@@ -1603,7 +1604,7 @@ Parameters:
 
     githubcl GET /repos/{owner}/{repo}/statuses/{ref} <owner> <repo> <ref>
 
-List Statuses for a specific Ref.
+List Statuses for a specific Ref....
 
 Parameters:
 
@@ -1659,7 +1660,7 @@ Parameters:
 
     githubcl GET /repos/{owner}/{repo}/watchers <owner> <repo>
 
-List Stargazers. New implementation.
+List Stargazers. New implementation....
 
 Parameters:
 
@@ -1722,7 +1723,7 @@ Options:
 
     githubcl GET /search/issues [options]
 
-Find issues by state and keyword. (This method returns up to 100 results per page.)
+Find issues by state and keyword. (This method ret...
 
 Options:
 
@@ -1804,7 +1805,7 @@ Parameters:
 
     githubcl GET /teams/{teamId}/members/{username} <teamId> <username>
 
-The "Get team member" API is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Get team membership API instead. It allows you to get both active and pending memberships.
+The "Get team member" API is deprecated and is sch...
 
 Parameters:
 
@@ -1836,7 +1837,7 @@ Parameters:
 
     githubcl GET /teams/{teamId}/repos/{owner}/{repo} <teamId> <owner> <repo>
 
-Check if a team manages a repository
+Check if a team manages a repository...
 
 Parameters:
 
@@ -1855,28 +1856,28 @@ Get the authenticated user.
 
     githubcl GET /user/emails
 
-List email addresses for a user.
+List email addresses for a user....
 
 
 =head3 GET /user/followers
 
     githubcl GET /user/followers
 
-List the authenticated user's followers
+List the authenticated user's followers...
 
 
 =head3 GET /user/following
 
     githubcl GET /user/following
 
-List who the authenticated user is following.
+List who the authenticated user is following....
 
 
 =head3 GET /user/following/{username}
 
     githubcl GET /user/following/{username} <username>
 
-Check if you are following a user.
+Check if you are following a user....
 
 Parameters:
 
@@ -1921,14 +1922,14 @@ Parameters:
 
     githubcl GET /user/orgs
 
-List public and private organizations for the authenticated user.
+List public and private organizations for the auth...
 
 
 =head3 GET /user/repos
 
     githubcl GET /user/repos [options]
 
-List repositories for the authenticated user. Note that this does not include
+List repositories for the authenticated user. Note...
 
 Options:
 
@@ -1939,7 +1940,7 @@ Options:
 
     githubcl GET /user/starred [options]
 
-List repositories being starred by the authenticated user.
+List repositories being starred by the authenticat...
 
 Options:
 
@@ -1951,7 +1952,7 @@ Options:
 
     githubcl GET /user/starred/{owner}/{repo} <owner> <repo>
 
-Check if you are starring a repository.
+Check if you are starring a repository....
 
 Parameters:
 
@@ -1962,14 +1963,14 @@ Parameters:
 
     githubcl GET /user/subscriptions
 
-List repositories being watched by the authenticated user.
+List repositories being watched by the authenticat...
 
 
 =head3 GET /user/subscriptions/{owner}/{repo}
 
     githubcl GET /user/subscriptions/{owner}/{repo} <owner> <repo>
 
-Check if you are watching a repository.
+Check if you are watching a repository....
 
 Parameters:
 
@@ -1980,7 +1981,7 @@ Parameters:
 
     githubcl GET /user/teams
 
-List all of the teams across all of the organizations to which the authenticated user belongs. This method requires user or repo scope when authenticating via OAuth.
+List all of the teams across all of the organizati...
 
 
 =head3 GET /users
@@ -2008,7 +2009,7 @@ Parameters:
 
     githubcl GET /users/{username}/events <username>
 
-If you are authenticated as the given user, you will see your private events. Otherwise, you'll only see public events.
+If you are authenticated as the given user, you wi...
 
 Parameters:
 
@@ -2018,7 +2019,7 @@ Parameters:
 
     githubcl GET /users/{username}/events/orgs/{org} <username> <org>
 
-This is the user's organization dashboard. You must be authenticated as the user to view this.
+This is the user's organization dashboard. You mus...
 
 Parameters:
 
@@ -2039,7 +2040,7 @@ Parameters:
 
     githubcl GET /users/{username}/following/{targetUser} <username> <targetUser>
 
-Check if one user follows another.
+Check if one user follows another....
 
 Parameters:
 
@@ -2075,7 +2076,7 @@ Parameters:
 
     githubcl GET /users/{username}/orgs <username>
 
-List all public organizations for a user.
+List all public organizations for a user....
 
 Parameters:
 
@@ -2085,7 +2086,7 @@ Parameters:
 
     githubcl GET /users/{username}/received_events <username>
 
-These are events that you'll only see public events.
+These are events that you'll only see public event...
 
 Parameters:
 
@@ -2095,7 +2096,7 @@ Parameters:
 
     githubcl GET /users/{username}/received_events/public <username>
 
-List public events that a user has received
+List public events that a user has received...
 
 Parameters:
 
@@ -2105,7 +2106,7 @@ Parameters:
 
     githubcl GET /users/{username}/repos [options] <username>
 
-List public repositories for the specified user.
+List public repositories for the specified user....
 
 Options:
 
@@ -2119,7 +2120,7 @@ Parameters:
 
     githubcl GET /users/{username}/starred <username>
 
-List repositories being starred by a user.
+List repositories being starred by a user....
 
 Parameters:
 
@@ -2129,7 +2130,7 @@ Parameters:
 
     githubcl GET /users/{username}/subscriptions <username>
 
-List repositories being watched by a user.
+List repositories being watched by a user....
 
 Parameters:
 
@@ -2318,7 +2319,7 @@ Parameters:
 
     githubcl PATCH /repos/{owner}/{repo}/releases/{id} <owner> <repo> <id>
 
-Users with push access to the repository can edit a release
+Users with push access to the repository can edit ...
 
 Parameters:
 
@@ -2381,21 +2382,21 @@ Parameters:
 
     githubcl POST /markdown
 
-Render an arbitrary Markdown document
+Render an arbitrary Markdown document...
 
 
 =head3 POST /markdown/raw
 
     githubcl POST /markdown/raw
 
-Render a Markdown document in raw mode
+Render a Markdown document in raw mode...
 
 
 =head3 POST /orgs/{org}/repos
 
     githubcl POST /orgs/{org}/repos <org>
 
-Create a new repository for the authenticated user. OAuth users must supply
+Create a new repository for the authenticated user...
 
 Parameters:
 
@@ -2427,7 +2428,7 @@ Parameters:
 
     githubcl POST /repos/{owner}/{repo}/deployments <owner> <repo>
 
-Users with push access can create a deployment for a given ref
+Users with push access can create a deployment for...
 
 Parameters:
 
@@ -2678,7 +2679,7 @@ Create a public key.
 
     githubcl POST /user/repos
 
-Create a new repository for the authenticated user. OAuth users must supply
+Create a new repository for the authenticated user...
 
 
 =head3  PUT
@@ -2754,7 +2755,7 @@ Parameters:
 
     githubcl PUT /repos/{owner}/{repo}/issues/{number}/labels <owner> <repo> <number>
 
-Replace all labels for an issue.
+Replace all labels for an issue....
 
 Parameters:
 
@@ -2766,7 +2767,7 @@ Parameters:
 
     githubcl PUT /repos/{owner}/{repo}/notifications <owner> <repo>
 
-Mark notifications as read in a repository.
+Mark notifications as read in a repository....
 
 Parameters:
 
@@ -2777,7 +2778,7 @@ Parameters:
 
     githubcl PUT /repos/{owner}/{repo}/pulls/{number}/merge <owner> <repo> <number>
 
-Merge a pull request (Merge Button's)
+Merge a pull request (Merge Button's)...
 
 Parameters:
 
@@ -2800,7 +2801,7 @@ Parameters:
 
     githubcl PUT /teams/{teamId}/members/{username} <teamId> <username>
 
-The API (described below) is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Add team membership API instead. It allows you to invite new organization members to your teams.
+The API (described below) is deprecated and is sch...
 
 Parameters:
 
@@ -2822,7 +2823,7 @@ Parameters:
 
     githubcl PUT /teams/{teamId}/repos/{org}/{repo} <teamId> <org> <repo>
 
-In order to add a repository to a team, the authenticated user must be an owner of the org that the team is associated with. Also, the repository must be owned by the organization, or a direct fork of a repository owned by the organization.
+In order to add a repository to a team, the authen...
 
 Parameters:
 

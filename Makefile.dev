@@ -1,12 +1,22 @@
-generate_pod:
-	perl examples/bin/metacpancl _pod > examples/pod/metacpancl.pod
-	perl examples/bin/githubcl _pod > examples/pod/githubcl.pod
-	perl examples/bin/digitaloceancl _pod > examples/pod/digitaloceancl.pod
+completion:
+	for i in githubcl digitaloceancl metacpancl; do \
+		appspec completion examples/$$i-appspec.yaml --zsh  > examples/zsh/_$$i; \
+		appspec completion examples/$$i-appspec.yaml --bash > examples/bash/$$i.bash; \
+	done
 
-generate_completion:
-	perl examples/bin/metacpancl _complete --bash > examples/bash/metacpancl.bash
-	perl examples/bin/metacpancl _complete --zsh > examples/zsh/_metacpancl
-	perl examples/bin/githubcl _complete --bash > examples/bash/githubcl.bash
-	perl examples/bin/githubcl _complete --zsh > examples/zsh/_githubcl
-	perl examples/bin/digitaloceancl _complete --bash > examples/bash/digitaloceancl.bash
-	perl examples/bin/digitaloceancl _complete --zsh > examples/zsh/_digitaloceancl
+appspec:
+	for i in githubcl digitaloceancl metacpancl; do \
+		./bin/apicli appspec openapi examples/$$i-openapi.yaml --name $$i > examples/$$i-appspec.yaml; \
+	done
+
+pod:
+	for i in githubcl digitaloceancl metacpancl; do \
+		appspec pod examples/$$i-appspec.yaml > examples/pod/$$i.pod; \
+	done
+
+html:
+	for i in githubcl digitaloceancl metacpancl; do \
+		pod2html examples/pod/$$i.pod > examples/html/$$i.html; \
+	done
+
+update: appspec completion pod html

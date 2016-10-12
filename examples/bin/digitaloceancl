@@ -6,20 +6,15 @@ use Data::Dumper;
 use FindBin '$Bin';
 use lib "$Bin/../../lib";
 
-package API::CLI::DigitalOcean;
-use base 'API::CLI';
+use API::CLI;
+use API::CLI::App::Spec;
 
-package main;
-use YAML::XS qw/ LoadFile /;
-
-my $openapi_file = "$Bin/../digitalocean-openapi.yaml";
-my $openapi = LoadFile($openapi_file);
-my $appspec_file = "$Bin/../digitalocean-appspec.yaml";
-my $appspec = LoadFile($appspec_file);
-my $cli = API::CLI::DigitalOcean->new({
-    openapi => $openapi,
-    spec => $appspec,
-    name => "digitaloceancl",
-    dir => "$ENV{HOME}/.digitaloceancl",
-});
-$cli->run;
+my $appspec_file = "$Bin/../digitaloceancl-appspec.yaml";
+my $spec = API::CLI::App::Spec->read($appspec_file);
+my $runner = App::Spec::Run->new(
+    spec => $spec,
+    cmd => API::CLI->new(
+        dir => "$ENV{HOME}/.digitaloceancl",
+    ),
+);
+$runner->run;

@@ -10,19 +10,21 @@ has method => ( is => 'ro' );
 has path => ( is => 'ro' );
 has req => ( is => 'rw' );
 has url => ( is => 'rw' );
+has verbose => ( is => 'ro' );
 
 sub from_openapi {
     my ($class, %args) = @_;
 
     my $method = $args{method};
     my $path = delete $args{path};
-    my $opt = $args{options};
-    my $params = $args{parameters};
+    my $opt = delete $args{options};
+    my $params = delete $args{parameters};
 
     my $self = $class->new(
         openapi => delete $args{openapi},
         method => delete $args{method},
         path => $path,
+        %args,
     );
 
     my $host = $self->openapi->{host};
@@ -58,17 +60,19 @@ sub request {
     my $status = $res->status_line;
 
     my $ct = $res->content_type;
-    my $out = "Response: $status ($ct)\n";
+    my $out = $self->verbose ? "Response: $status ($ct)\n" : undef;
     my $data;
     my $ok = 0;
     if ($res->is_success) {
         $ok = 1;
-        my $coder = JSON::XS->new->ascii->pretty->allow_nonref;
-        $data = $coder->decode($content);
-        $content = $coder->encode($data);
+        if ($ct eq 'application/json') {
+            my $coder = JSON::XS->new->ascii->pretty->allow_nonref;
+            $data = $coder->decode($content);
+            $content = $coder->encode($data);
+        }
     }
 
-    return $ok, $out, $content;
+    return ($ok, $out, $content);
 }
 
 sub content {

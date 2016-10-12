@@ -15,8 +15,8 @@ _githubcl() {
     local INDEX=`expr $COMP_CWORD - 1`
     MYWORDS=("${COMP_WORDS[@]:1:$COMP_CWORD}")
 
-    FLAGS=('--help' 'Show command help' '-h' 'Show command help')
-    OPTIONS=('--debug' 'Debug' '--data-file' 'File with data for POST/PUT/PATCH/DELETE requests')
+    FLAGS=('--debug' 'debug' '-d' 'debug' '--verbose' 'verbose' '-v' 'verbose' '--help' 'Show command help' '-h' 'Show command help')
+    OPTIONS=('--data-file' 'File with data for POST/PUT/PATCH/DELETE requests')
     __githubcl_handle_options_flags
 
     case $INDEX in
@@ -54,8 +54,6 @@ _githubcl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -77,8 +75,6 @@ _githubcl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -97,8 +93,6 @@ _githubcl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -117,8 +111,6 @@ _githubcl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -140,8 +132,6 @@ _githubcl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -163,8 +153,6 @@ _githubcl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -186,8 +174,6 @@ _githubcl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -212,8 +198,6 @@ _githubcl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -238,8 +222,6 @@ _githubcl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -264,8 +246,6 @@ _githubcl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -290,8 +270,6 @@ _githubcl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -316,8 +294,6 @@ _githubcl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -342,8 +318,6 @@ _githubcl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -368,8 +342,6 @@ _githubcl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -394,8 +366,6 @@ _githubcl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -423,8 +393,6 @@ _githubcl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -449,8 +417,6 @@ _githubcl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -475,8 +441,6 @@ _githubcl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -501,8 +465,6 @@ _githubcl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -527,8 +489,6 @@ _githubcl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -553,8 +513,6 @@ _githubcl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -579,8 +537,6 @@ _githubcl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -602,8 +558,6 @@ _githubcl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -622,8 +576,6 @@ _githubcl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -645,8 +597,6 @@ _githubcl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -668,8 +618,6 @@ _githubcl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -694,8 +642,6 @@ _githubcl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -720,8 +666,6 @@ _githubcl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -740,8 +684,6 @@ _githubcl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -763,8 +705,6 @@ _githubcl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -786,8 +726,6 @@ _githubcl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -842,8 +780,6 @@ Only gists updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-since)
@@ -863,8 +799,6 @@ Only gists updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-since)
@@ -884,8 +818,6 @@ Only gists updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-since)
@@ -906,8 +838,6 @@ Only gists updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -926,8 +856,6 @@ Only gists updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -949,8 +877,6 @@ Only gists updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -969,8 +895,6 @@ Only gists updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -995,8 +919,6 @@ Only gists updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -1016,8 +938,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-filter)
@@ -1062,8 +982,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -1082,8 +1000,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-order)
@@ -1112,8 +1028,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -1132,8 +1046,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-order)
@@ -1169,8 +1081,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -1190,8 +1100,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-all)
@@ -1216,8 +1124,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -1236,8 +1142,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -1256,8 +1160,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -1276,8 +1178,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -1300,8 +1200,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-filter)
@@ -1336,8 +1234,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -1359,8 +1255,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -1379,8 +1273,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -1402,8 +1294,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -1422,8 +1312,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-type)
@@ -1445,8 +1333,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -1474,8 +1360,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -1497,8 +1381,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -1523,8 +1405,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -1546,8 +1426,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -1572,8 +1450,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -1595,8 +1471,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -1621,8 +1495,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -1644,8 +1516,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -1670,8 +1540,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -1695,8 +1563,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-since)
@@ -1731,8 +1597,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -1757,8 +1621,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -1783,8 +1645,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -1812,8 +1672,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -1838,8 +1696,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-path)
@@ -1865,8 +1721,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-anon)
@@ -1890,8 +1744,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -1916,8 +1768,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -1939,8 +1789,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -1965,8 +1813,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -1988,8 +1834,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -2011,8 +1855,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-sort)
@@ -2040,8 +1882,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -2066,8 +1906,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -2089,8 +1927,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -2115,8 +1951,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -2141,8 +1975,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -2167,8 +1999,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-recursive)
@@ -2192,8 +2022,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -2218,8 +2046,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -2245,8 +2071,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-filter)
@@ -2286,8 +2110,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-direction)
@@ -2319,8 +2141,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -2342,8 +2162,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -2368,8 +2186,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -2394,8 +2210,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -2420,8 +2234,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -2446,8 +2258,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -2472,8 +2282,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -2495,8 +2303,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -2521,8 +2327,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -2544,8 +2348,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -2570,8 +2372,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -2593,8 +2393,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -2616,8 +2414,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-state)
@@ -2650,8 +2446,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -2676,8 +2470,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -2703,8 +2495,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-all)
@@ -2734,8 +2524,6 @@ Example: github:new-script-format.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-state)
@@ -2766,8 +2554,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-direction)
@@ -2799,8 +2585,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -2825,8 +2609,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -2851,8 +2633,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -2877,8 +2657,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -2903,8 +2681,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -2929,8 +2705,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -2952,8 +2726,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-ref)
@@ -2977,8 +2749,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -3003,8 +2773,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -3029,8 +2797,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -3055,8 +2821,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -3078,8 +2842,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -3101,8 +2863,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -3124,8 +2884,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -3147,8 +2905,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -3170,8 +2926,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -3193,8 +2947,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -3219,8 +2971,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -3242,8 +2992,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -3265,8 +3013,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -3288,8 +3034,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -3311,8 +3055,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -3334,8 +3076,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -3364,8 +3104,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -3383,8 +3121,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-since)
@@ -3418,8 +3154,6 @@ by best match.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-order)
@@ -3443,8 +3177,6 @@ by best match.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-order)
@@ -3481,8 +3213,6 @@ creation, or when they were last updated.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-order)
@@ -3518,8 +3248,6 @@ language.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-order)
@@ -3546,8 +3274,6 @@ language.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -3566,8 +3292,6 @@ language.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -3589,8 +3313,6 @@ language.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -3612,8 +3334,6 @@ language.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -3632,8 +3352,6 @@ language.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -3658,8 +3376,6 @@ language.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -3702,8 +3418,6 @@ language.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -3723,8 +3437,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-filter)
@@ -3765,8 +3477,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -3788,8 +3498,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-type)
@@ -3808,8 +3516,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-direction)
@@ -3836,8 +3542,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -3865,8 +3569,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -3888,8 +3590,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-since)
@@ -3910,8 +3610,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -3930,8 +3628,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -3953,8 +3649,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -3973,8 +3667,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -3996,8 +3688,6 @@ Only issues updated at or after this time are returned.
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4018,8 +3708,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-since)
@@ -4040,8 +3728,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4060,8 +3746,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4080,8 +3764,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4100,8 +3782,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4120,8 +3800,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-type)
@@ -4143,8 +3821,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4163,8 +3839,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4202,8 +3876,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4225,8 +3897,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4245,8 +3915,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4265,8 +3933,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4288,8 +3954,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4314,8 +3978,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4340,8 +4002,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4366,8 +4026,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4392,8 +4050,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4418,8 +4074,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4444,8 +4098,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4470,8 +4122,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4496,8 +4146,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4522,8 +4170,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4548,8 +4194,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4574,8 +4218,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4594,8 +4236,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4645,8 +4285,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4665,8 +4303,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4697,8 +4333,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4717,8 +4351,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4743,8 +4375,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4766,8 +4396,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4792,8 +4420,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4815,8 +4441,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4838,8 +4462,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4861,8 +4483,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4884,8 +4504,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4907,8 +4525,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4930,8 +4546,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4953,8 +4567,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -4979,8 +4591,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -5002,8 +4612,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -5028,8 +4636,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -5054,8 +4660,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -5077,8 +4681,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -5100,8 +4702,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -5123,8 +4723,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -5146,8 +4744,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -5169,8 +4765,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -5195,8 +4789,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -5218,8 +4810,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -5244,8 +4834,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -5301,8 +4889,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -5327,8 +4913,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -5350,8 +4934,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -5376,8 +4958,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -5402,8 +4982,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -5428,8 +5006,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -5451,8 +5027,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -5477,8 +5051,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -5500,8 +5072,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -5523,8 +5093,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -5546,8 +5114,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -5572,8 +5138,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -5592,8 +5156,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -5615,8 +5177,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -5638,8 +5198,6 @@ Example: "2012-10-09T23:39:01Z".
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -5660,8 +5218,6 @@ Example: "2012-10-09T23:39:01Z".
           *)
             __comp_current_options true || return # after parameters
             case ${MYWORDS[$INDEX-1]} in
-              --debug)
-              ;;
               --data-file)
               ;;
               --name)

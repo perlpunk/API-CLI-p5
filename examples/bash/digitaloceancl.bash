@@ -15,8 +15,8 @@ _digitaloceancl() {
     local INDEX=`expr $COMP_CWORD - 1`
     MYWORDS=("${COMP_WORDS[@]:1:$COMP_CWORD}")
 
-    FLAGS=('--help' 'Show command help' '-h' 'Show command help')
-    OPTIONS=('--debug' 'Debug' '--data-file' 'File with data for POST/PUT/PATCH/DELETE requests')
+    FLAGS=('--debug' 'debug' '-d' 'debug' '--verbose' 'verbose' '-v' 'verbose' '--help' 'Show command help' '-h' 'Show command help')
+    OPTIONS=('--data-file' 'File with data for POST/PUT/PATCH/DELETE requests')
     __digitaloceancl_handle_options_flags
 
     case $INDEX in
@@ -66,8 +66,6 @@ _digitaloceancl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -113,8 +111,6 @@ _digitaloceancl() {
           *)
             __comp_current_options true || return # after parameters
             case ${MYWORDS[$INDEX-1]} in
-              --debug)
-              ;;
               --data-file)
               ;;
               --name)

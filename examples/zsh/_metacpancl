@@ -44,8 +44,11 @@ _metacpancl() {
                             '1: :->cmd1' \
                             '2: :->cmd2' \
                             '3: :->author' \
-                            '--debug[Debug]:debug' \
                             '--data-file[File with data for POST/PUT/PATCH/DELETE requests]:data-file:_files' \
+                            '--debug[debug]' \
+                            '-d[debug]' \
+                            '--verbose[verbose]' \
+                            '-v[verbose]' \
                             '--help[Show command help]' \
                             '-h[Show command help]' \
                             && ret=0
@@ -64,8 +67,11 @@ _metacpancl() {
                             '1: :->cmd1' \
                             '2: :->cmd2' \
                             '3: :->distribution' \
-                            '--debug[Debug]:debug' \
                             '--data-file[File with data for POST/PUT/PATCH/DELETE requests]:data-file:_files' \
+                            '--debug[debug]' \
+                            '-d[debug]' \
+                            '--verbose[verbose]' \
+                            '-v[verbose]' \
                             '--help[Show command help]' \
                             '-h[Show command help]' \
                             && ret=0
@@ -84,8 +90,11 @@ _metacpancl() {
                             '1: :->cmd1' \
                             '2: :->cmd2' \
                             '3: :->module' \
-                            '--debug[Debug]:debug' \
                             '--data-file[File with data for POST/PUT/PATCH/DELETE requests]:data-file:_files' \
+                            '--debug[debug]' \
+                            '-d[debug]' \
+                            '--verbose[verbose]' \
+                            '-v[verbose]' \
                             '--help[Show command help]' \
                             '-h[Show command help]' \
                             && ret=0
@@ -104,8 +113,11 @@ _metacpancl() {
                             '1: :->cmd1' \
                             '2: :->cmd2' \
                             '3: :->module' \
-                            '--debug[Debug]:debug' \
                             '--data-file[File with data for POST/PUT/PATCH/DELETE requests]:data-file:_files' \
+                            '--debug[debug]' \
+                            '-d[debug]' \
+                            '--verbose[verbose]' \
+                            '-v[verbose]' \
                             '--help[Show command help]' \
                             '-h[Show command help]' \
                             '--q-content-type[Default is text/html]:q-content-type:("text/html" "text/plain" "text/x-pod" "text/x-markdown")' \
@@ -126,8 +138,11 @@ _metacpancl() {
                             '2: :->cmd2' \
                             '3: :->author' \
                             '4: :->release' \
-                            '--debug[Debug]:debug' \
                             '--data-file[File with data for POST/PUT/PATCH/DELETE requests]:data-file:_files' \
+                            '--debug[debug]' \
+                            '-d[debug]' \
+                            '--verbose[verbose]' \
+                            '-v[verbose]' \
                             '--help[Show command help]' \
                             '-h[Show command help]' \
                             && ret=0
@@ -149,8 +164,11 @@ _metacpancl() {
                             '1: :->cmd1' \
                             '2: :->cmd2' \
                             '3: :->distribution' \
-                            '--debug[Debug]:debug' \
                             '--data-file[File with data for POST/PUT/PATCH/DELETE requests]:data-file:_files' \
+                            '--debug[debug]' \
+                            '-d[debug]' \
+                            '--verbose[verbose]' \
+                            '-v[verbose]' \
                             '--help[Show command help]' \
                             '-h[Show command help]' \
                             && ret=0
@@ -168,8 +186,11 @@ _metacpancl() {
                         _arguments -s -C \
                             '1: :->cmd1' \
                             '2: :->cmd2' \
-                            '--debug[Debug]:debug' \
                             '--data-file[File with data for POST/PUT/PATCH/DELETE requests]:data-file:_files' \
+                            '--debug[debug]' \
+                            '-d[debug]' \
+                            '--verbose[verbose]' \
+                            '-v[verbose]' \
                             '--help[Show command help]' \
                             '-h[Show command help]' \
                             '--q-q[query ("author:ANDK AND status:latest")]:q-q' \
@@ -208,8 +229,11 @@ _metacpancl() {
                         _arguments -s -C \
                             '1: :->cmd1' \
                             '2: :->cmd2' \
-                            '--debug[Debug]:debug' \
                             '--data-file[File with data for POST/PUT/PATCH/DELETE requests]:data-file:_files' \
+                            '--debug[debug]' \
+                            '-d[debug]' \
+                            '--verbose[verbose]' \
+                            '-v[verbose]' \
                             '--help[Show command help]' \
                             '-h[Show command help]' \
                             && ret=0
@@ -227,8 +251,11 @@ _metacpancl() {
                 # ---- Command: _complete
                 _arguments -s -C \
                     '1: :->cmd1' \
-                    '--debug[Debug]:debug' \
                     '--data-file[File with data for POST/PUT/PATCH/DELETE requests]:data-file:_files' \
+                    '--debug[debug]' \
+                    '-d[debug]' \
+                    '--verbose[verbose]' \
+                    '-v[verbose]' \
                     '--help[Show command help]' \
                     '-h[Show command help]' \
                     '--name[name of the program]:name' \
@@ -243,8 +270,11 @@ _metacpancl() {
                 # ---- Command: _pod
                 _arguments -s -C \
                     '1: :->cmd1' \
-                    '--debug[Debug]:debug' \
                     '--data-file[File with data for POST/PUT/PATCH/DELETE requests]:data-file:_files' \
+                    '--debug[debug]' \
+                    '-d[debug]' \
+                    '--verbose[verbose]' \
+                    '-v[verbose]' \
                     '--help[Show command help]' \
                     '-h[Show command help]' \
                     && ret=0
@@ -293,8 +323,11 @@ _metacpancl() {
                                     '1: :->cmd1' \
                                     '2: :->cmd2' \
                                     '3: :->cmd3' \
-                                    '--debug[Debug]:debug' \
                                     '--data-file[File with data for POST/PUT/PATCH/DELETE requests]:data-file:_files' \
+                                    '--debug[debug]' \
+                                    '-d[debug]' \
+                                    '--verbose[verbose]' \
+                                    '-v[verbose]' \
                                     '--help[Show command help]' \
                                     '-h[Show command help]' \
                                     '--all[]' \
@@ -309,8 +342,11 @@ _metacpancl() {
                                     '1: :->cmd1' \
                                     '2: :->cmd2' \
                                     '3: :->cmd3' \
-                                    '--debug[Debug]:debug' \
                                     '--data-file[File with data for POST/PUT/PATCH/DELETE requests]:data-file:_files' \
+                                    '--debug[debug]' \
+                                    '-d[debug]' \
+                                    '--verbose[verbose]' \
+                                    '-v[verbose]' \
                                     '--help[Show command help]' \
                                     '-h[Show command help]' \
                                     '--all[]' \
@@ -325,8 +361,11 @@ _metacpancl() {
                                     '1: :->cmd1' \
                                     '2: :->cmd2' \
                                     '3: :->cmd3' \
-                                    '--debug[Debug]:debug' \
                                     '--data-file[File with data for POST/PUT/PATCH/DELETE requests]:data-file:_files' \
+                                    '--debug[debug]' \
+                                    '-d[debug]' \
+                                    '--verbose[verbose]' \
+                                    '-v[verbose]' \
                                     '--help[Show command help]' \
                                     '-h[Show command help]' \
                                     '--all[]' \
@@ -341,8 +380,11 @@ _metacpancl() {
                                     '1: :->cmd1' \
                                     '2: :->cmd2' \
                                     '3: :->cmd3' \
-                                    '--debug[Debug]:debug' \
                                     '--data-file[File with data for POST/PUT/PATCH/DELETE requests]:data-file:_files' \
+                                    '--debug[debug]' \
+                                    '-d[debug]' \
+                                    '--verbose[verbose]' \
+                                    '-v[verbose]' \
                                     '--help[Show command help]' \
                                     '-h[Show command help]' \
                                     '--all[]' \
@@ -357,8 +399,11 @@ _metacpancl() {
                                     '1: :->cmd1' \
                                     '2: :->cmd2' \
                                     '3: :->cmd3' \
-                                    '--debug[Debug]:debug' \
                                     '--data-file[File with data for POST/PUT/PATCH/DELETE requests]:data-file:_files' \
+                                    '--debug[debug]' \
+                                    '-d[debug]' \
+                                    '--verbose[verbose]' \
+                                    '-v[verbose]' \
                                     '--help[Show command help]' \
                                     '-h[Show command help]' \
                                     '--all[]' \
@@ -373,8 +418,11 @@ _metacpancl() {
                                     '1: :->cmd1' \
                                     '2: :->cmd2' \
                                     '3: :->cmd3' \
-                                    '--debug[Debug]:debug' \
                                     '--data-file[File with data for POST/PUT/PATCH/DELETE requests]:data-file:_files' \
+                                    '--debug[debug]' \
+                                    '-d[debug]' \
+                                    '--verbose[verbose]' \
+                                    '-v[verbose]' \
                                     '--help[Show command help]' \
                                     '-h[Show command help]' \
                                     '--all[]' \
@@ -389,8 +437,11 @@ _metacpancl() {
                                     '1: :->cmd1' \
                                     '2: :->cmd2' \
                                     '3: :->cmd3' \
-                                    '--debug[Debug]:debug' \
                                     '--data-file[File with data for POST/PUT/PATCH/DELETE requests]:data-file:_files' \
+                                    '--debug[debug]' \
+                                    '-d[debug]' \
+                                    '--verbose[verbose]' \
+                                    '-v[verbose]' \
                                     '--help[Show command help]' \
                                     '-h[Show command help]' \
                                     '--all[]' \
@@ -429,8 +480,11 @@ _metacpancl() {
                                     '1: :->cmd1' \
                                     '2: :->cmd2' \
                                     '3: :->cmd3' \
-                                    '--debug[Debug]:debug' \
                                     '--data-file[File with data for POST/PUT/PATCH/DELETE requests]:data-file:_files' \
+                                    '--debug[debug]' \
+                                    '-d[debug]' \
+                                    '--verbose[verbose]' \
+                                    '-v[verbose]' \
                                     '--help[Show command help]' \
                                     '-h[Show command help]' \
                                     '--all[]' \
@@ -450,8 +504,11 @@ _metacpancl() {
                         _arguments -s -C \
                             '1: :->cmd1' \
                             '2: :->cmd2' \
-                            '--debug[Debug]:debug' \
                             '--data-file[File with data for POST/PUT/PATCH/DELETE requests]:data-file:_files' \
+                            '--debug[debug]' \
+                            '-d[debug]' \
+                            '--verbose[verbose]' \
+                            '-v[verbose]' \
                             '--help[Show command help]' \
                             '-h[Show command help]' \
                             '--all[]' \
@@ -465,8 +522,11 @@ _metacpancl() {
                         _arguments -s -C \
                             '1: :->cmd1' \
                             '2: :->cmd2' \
-                            '--debug[Debug]:debug' \
                             '--data-file[File with data for POST/PUT/PATCH/DELETE requests]:data-file:_files' \
+                            '--debug[debug]' \
+                            '-d[debug]' \
+                            '--verbose[verbose]' \
+                            '-v[verbose]' \
                             '--help[Show command help]' \
                             '-h[Show command help]' \
                             '--all[]' \

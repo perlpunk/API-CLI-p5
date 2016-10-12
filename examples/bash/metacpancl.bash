@@ -15,8 +15,8 @@ _metacpancl() {
     local INDEX=`expr $COMP_CWORD - 1`
     MYWORDS=("${COMP_WORDS[@]:1:$COMP_CWORD}")
 
-    FLAGS=('--help' 'Show command help' '-h' 'Show command help')
-    OPTIONS=('--debug' 'Debug' '--data-file' 'File with data for POST/PUT/PATCH/DELETE requests')
+    FLAGS=('--debug' 'debug' '-d' 'debug' '--verbose' 'verbose' '-v' 'verbose' '--help' 'Show command help' '-h' 'Show command help')
+    OPTIONS=('--data-file' 'File with data for POST/PUT/PATCH/DELETE requests')
     __metacpancl_handle_options_flags
 
     case $INDEX in
@@ -54,8 +54,6 @@ _metacpancl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -74,8 +72,6 @@ _metacpancl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -94,8 +90,6 @@ _metacpancl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -114,8 +108,6 @@ _metacpancl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-content-type)
@@ -140,8 +132,6 @@ _metacpancl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -160,8 +150,6 @@ _metacpancl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
 
@@ -177,8 +165,6 @@ _metacpancl() {
               *)
                 __comp_current_options true || return # after parameters
                 case ${MYWORDS[$INDEX-1]} in
-                  --debug)
-                  ;;
                   --data-file)
                   ;;
                   --q-q)
@@ -230,8 +216,6 @@ _metacpancl() {
           *)
             __comp_current_options true || return # after parameters
             case ${MYWORDS[$INDEX-1]} in
-              --debug)
-              ;;
               --data-file)
               ;;
               --name)
