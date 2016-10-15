@@ -17174,7 +17174,7 @@ subcommands:
   DELETE:
     op: apicall
     subcommands:
-      /gists/{id}:
+      /gists/:id:
         options: []
         parameters:
         - name: id
@@ -17182,7 +17182,7 @@ subcommands:
           summary: Id of gist.
           type: integer
         summary: Delete a gist.
-      /gists/{id}/comments/{commentId}:
+      /gists/:id/comments/:commentId:
         options: []
         parameters:
         - name: id
@@ -17194,7 +17194,7 @@ subcommands:
           summary: Id of comment.
           type: integer
         summary: Delete a comment.
-      /gists/{id}/star:
+      /gists/:id/star:
         options: []
         parameters:
         - name: id
@@ -17202,7 +17202,7 @@ subcommands:
           summary: Id of gist.
           type: integer
         summary: Unstar a gist.
-      /notifications/threads/{id}/subscription:
+      /notifications/threads/:id/subscription:
         options: []
         parameters:
         - name: id
@@ -17210,7 +17210,7 @@ subcommands:
           summary: Id of thread.
           type: integer
         summary: Delete a Thread Subscription.
-      /orgs/{org}/members/{username}:
+      /orgs/:org/members/:username:
         options: []
         parameters:
         - name: org
@@ -17222,7 +17222,7 @@ subcommands:
           summary: Name of the user.
           type: string
         summary: Remove a member.
-      /orgs/{org}/public_members/{username}:
+      /orgs/:org/public_members/:username:
         options: []
         parameters:
         - name: org
@@ -17234,7 +17234,7 @@ subcommands:
           summary: Name of the user.
           type: string
         summary: Conceal a user's membership.
-      /repos/{owner}/{repo}:
+      /repos/:owner/:repo:
         options: []
         parameters:
         - name: owner
@@ -17246,7 +17246,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Delete a Repository.
-      /repos/{owner}/{repo}/collaborators/{user}:
+      /repos/:owner/:repo/collaborators/:user:
         options: []
         parameters:
         - name: owner
@@ -17262,7 +17262,7 @@ subcommands:
           summary: Login of the user.
           type: string
         summary: Remove collaborator.
-      /repos/{owner}/{repo}/comments/{commentId}:
+      /repos/:owner/:repo/comments/:commentId:
         options: []
         parameters:
         - name: owner
@@ -17278,7 +17278,7 @@ subcommands:
           summary: Id of comment.
           type: integer
         summary: Delete a commit comment
-      /repos/{owner}/{repo}/contents/{path}:
+      /repos/:owner/:repo/contents/:path:
         options: []
         parameters:
         - name: owner
@@ -17294,7 +17294,7 @@ subcommands:
           summary: ~
           type: string
         summary: Delete a file.
-      /repos/{owner}/{repo}/downloads/{downloadId}:
+      /repos/:owner/:repo/downloads/:downloadId:
         options: []
         parameters:
         - name: owner
@@ -17310,7 +17310,7 @@ subcommands:
           summary: Id of download.
           type: integer
         summary: Deprecated. Delete a download.
-      /repos/{owner}/{repo}/git/refs/{ref}:
+      /repos/:owner/:repo/git/refs/:ref:
         options: []
         parameters:
         - name: owner
@@ -17326,7 +17326,7 @@ subcommands:
           summary: ~
           type: string
         summary: Delete a Reference
-      /repos/{owner}/{repo}/hooks/{hookId}:
+      /repos/:owner/:repo/hooks/:hookId:
         options: []
         parameters:
         - name: owner
@@ -17342,23 +17342,7 @@ subcommands:
           summary: Id of hook.
           type: integer
         summary: Delete a hook.
-      /repos/{owner}/{repo}/issues/comments/{commentId}:
-        options: []
-        parameters:
-        - name: owner
-          required: 1
-          summary: Name of repository owner.
-          type: string
-        - name: repo
-          required: 1
-          summary: Name of repository.
-          type: string
-        - name: commentId
-          required: 1
-          summary: ID of comment.
-          type: integer
-        summary: Delete a comment.
-      /repos/{owner}/{repo}/issues/{number}/labels:
+      /repos/:owner/:repo/issues/:number/labels:
         options: []
         parameters:
         - name: owner
@@ -17374,7 +17358,7 @@ subcommands:
           summary: Number of issue.
           type: integer
         summary: Remove all labels from an issue....
-      /repos/{owner}/{repo}/issues/{number}/labels/{name}:
+      /repos/:owner/:repo/issues/:number/labels/:name:
         options: []
         parameters:
         - name: owner
@@ -17394,7 +17378,23 @@ subcommands:
           summary: Name of the label.
           type: string
         summary: Remove a label from an issue.
-      /repos/{owner}/{repo}/keys/{keyId}:
+      /repos/:owner/:repo/issues/comments/:commentId:
+        options: []
+        parameters:
+        - name: owner
+          required: 1
+          summary: Name of repository owner.
+          type: string
+        - name: repo
+          required: 1
+          summary: Name of repository.
+          type: string
+        - name: commentId
+          required: 1
+          summary: ID of comment.
+          type: integer
+        summary: Delete a comment.
+      /repos/:owner/:repo/keys/:keyId:
         options: []
         parameters:
         - name: owner
@@ -17410,7 +17410,7 @@ subcommands:
           summary: Id of key.
           type: integer
         summary: Delete a key.
-      /repos/{owner}/{repo}/labels/{name}:
+      /repos/:owner/:repo/labels/:name:
         options: []
         parameters:
         - name: owner
@@ -17426,7 +17426,7 @@ subcommands:
           summary: Name of the label.
           type: string
         summary: Delete a label.
-      /repos/{owner}/{repo}/milestones/{number}:
+      /repos/:owner/:repo/milestones/:number:
         options: []
         parameters:
         - name: owner
@@ -17442,7 +17442,7 @@ subcommands:
           summary: Number of milestone.
           type: integer
         summary: Delete a milestone.
-      /repos/{owner}/{repo}/pulls/comments/{commentId}:
+      /repos/:owner/:repo/pulls/comments/:commentId:
         options: []
         parameters:
         - name: owner
@@ -17458,23 +17458,7 @@ subcommands:
           summary: Id of comment.
           type: integer
         summary: Delete a comment.
-      /repos/{owner}/{repo}/releases/assets/{id}:
-        options: []
-        parameters:
-        - name: owner
-          required: 1
-          summary: Name of repository owner.
-          type: string
-        - name: repo
-          required: 1
-          summary: Name of repository.
-          type: string
-        - name: id
-          required: 1
-          summary: ~
-          type: string
-        summary: Delete a release asset
-      /repos/{owner}/{repo}/releases/{id}:
+      /repos/:owner/:repo/releases/:id:
         options: []
         parameters:
         - name: owner
@@ -17490,7 +17474,23 @@ subcommands:
           summary: ~
           type: string
         summary: Users with push access to the repository can delet...
-      /repos/{owner}/{repo}/subscription:
+      /repos/:owner/:repo/releases/assets/:id:
+        options: []
+        parameters:
+        - name: owner
+          required: 1
+          summary: Name of repository owner.
+          type: string
+        - name: repo
+          required: 1
+          summary: Name of repository.
+          type: string
+        - name: id
+          required: 1
+          summary: ~
+          type: string
+        summary: Delete a release asset
+      /repos/:owner/:repo/subscription:
         options: []
         parameters:
         - name: owner
@@ -17502,7 +17502,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Delete a Repository Subscription....
-      /teams/{teamId}:
+      /teams/:teamId:
         options: []
         parameters:
         - name: teamId
@@ -17510,7 +17510,7 @@ subcommands:
           summary: Id of team.
           type: integer
         summary: Delete team.
-      /teams/{teamId}/members/{username}:
+      /teams/:teamId/members/:username:
         options: []
         parameters:
         - name: teamId
@@ -17522,7 +17522,7 @@ subcommands:
           summary: Name of a member.
           type: string
         summary: The "Remove team member" API is deprecated and is ...
-      /teams/{teamId}/memberships/{username}:
+      /teams/:teamId/memberships/:username:
         options: []
         parameters:
         - name: teamId
@@ -17534,7 +17534,7 @@ subcommands:
           summary: Name of a member.
           type: string
         summary: Remove team membership.
-      /teams/{teamId}/repos/{owner}/{repo}:
+      /teams/:teamId/repos/:owner/:repo:
         options: []
         parameters:
         - name: teamId
@@ -17554,7 +17554,7 @@ subcommands:
         options: []
         parameters: []
         summary: Delete email address(es).
-      /user/following/{username}:
+      /user/following/:username:
         options: []
         parameters:
         - name: username
@@ -17562,7 +17562,7 @@ subcommands:
           summary: Name of user.
           type: string
         summary: Unfollow a user.
-      /user/keys/{keyId}:
+      /user/keys/:keyId:
         options: []
         parameters:
         - name: keyId
@@ -17570,7 +17570,7 @@ subcommands:
           summary: ID of key.
           type: integer
         summary: Delete a public key. Removes a public key. Require...
-      /user/starred/{owner}/{repo}:
+      /user/starred/:owner/:repo:
         options: []
         parameters:
         - name: owner
@@ -17582,7 +17582,7 @@ subcommands:
           summary: Name of a repository.
           type: string
         summary: Unstar a repository
-      /user/subscriptions/{owner}/{repo}:
+      /user/subscriptions/:owner/:repo:
         options: []
         parameters:
         - name: owner
@@ -17620,6 +17620,42 @@ subcommands:
           type: string
         parameters: []
         summary: List the authenticated user's gists or if called a...
+      /gists/:id:
+        options: []
+        parameters:
+        - name: id
+          required: 1
+          summary: Id of gist.
+          type: integer
+        summary: Get a single gist.
+      /gists/:id/comments:
+        options: []
+        parameters:
+        - name: id
+          required: 1
+          summary: Id of gist.
+          type: integer
+        summary: List comments on a gist.
+      /gists/:id/comments/:commentId:
+        options: []
+        parameters:
+        - name: id
+          required: 1
+          summary: Id of gist.
+          type: integer
+        - name: commentId
+          required: 1
+          summary: Id of comment.
+          type: integer
+        summary: Get a single comment.
+      /gists/:id/star:
+        options: []
+        parameters:
+        - name: id
+          required: 1
+          summary: Id of gist.
+          type: integer
+        summary: Check if a gist is starred.
       /gists/public:
         options:
         - name: q-since
@@ -17640,47 +17676,11 @@ subcommands:
           type: string
         parameters: []
         summary: List the authenticated user's starred gists....
-      /gists/{id}:
-        options: []
-        parameters:
-        - name: id
-          required: 1
-          summary: Id of gist.
-          type: integer
-        summary: Get a single gist.
-      /gists/{id}/comments:
-        options: []
-        parameters:
-        - name: id
-          required: 1
-          summary: Id of gist.
-          type: integer
-        summary: List comments on a gist.
-      /gists/{id}/comments/{commentId}:
-        options: []
-        parameters:
-        - name: id
-          required: 1
-          summary: Id of gist.
-          type: integer
-        - name: commentId
-          required: 1
-          summary: Id of comment.
-          type: integer
-        summary: Get a single comment.
-      /gists/{id}/star:
-        options: []
-        parameters:
-        - name: id
-          required: 1
-          summary: Id of gist.
-          type: integer
-        summary: Check if a gist is starred.
       /gitignore/templates:
         options: []
         parameters: []
         summary: Listing available templates.
-      /gitignore/templates/{language}:
+      /gitignore/templates/:language:
         options: []
         parameters:
         - name: language
@@ -17724,7 +17724,7 @@ subcommands:
           type: string
         parameters: []
         summary: List issues.
-      /legacy/issues/search/{owner}/{repository}/{state}/{keyword}:
+      /legacy/issues/search/:owner/:repository/:state/:keyword:
         options: []
         parameters:
         - name: keyword
@@ -17746,7 +17746,7 @@ subcommands:
           summary: ~
           type: string
         summary: Find issues by state and keyword....
-      /legacy/repos/search/{keyword}:
+      /legacy/repos/search/:keyword:
         options:
         - enum: *6
           name: q-order
@@ -17774,7 +17774,7 @@ subcommands:
           summary: The search term
           type: string
         summary: Find repositories by keyword. Note, this legacy me...
-      /legacy/user/email/{email}:
+      /legacy/user/email/:email:
         options: []
         parameters:
         - name: email
@@ -17782,7 +17782,7 @@ subcommands:
           summary: The email address
           type: string
         summary: This API call is added for compatibility reasons o...
-      /legacy/user/search/{keyword}:
+      /legacy/user/search/:keyword:
         options:
         - enum: *8
           name: q-order
@@ -17810,7 +17810,7 @@ subcommands:
         options: []
         parameters: []
         summary: This gives some information about GitHub.com, the ...
-      /networks/{owner}/{repo}/events:
+      /networks/:owner/:repo/events:
         options: []
         parameters:
         - name: owner
@@ -17842,7 +17842,7 @@ subcommands:
           type: string
         parameters: []
         summary: List your notifications.
-      /notifications/threads/{id}:
+      /notifications/threads/:id:
         options: []
         parameters:
         - name: id
@@ -17850,7 +17850,7 @@ subcommands:
           summary: Id of thread.
           type: integer
         summary: View a single thread.
-      /notifications/threads/{id}/subscription:
+      /notifications/threads/:id/subscription:
         options: []
         parameters:
         - name: id
@@ -17858,7 +17858,7 @@ subcommands:
           summary: Id of thread.
           type: integer
         summary: Get a Thread Subscription.
-      /orgs/{org}:
+      /orgs/:org:
         options: []
         parameters:
         - name: org
@@ -17866,7 +17866,7 @@ subcommands:
           summary: Name of organisation.
           type: string
         summary: Get an Organization.
-      /orgs/{org}/events:
+      /orgs/:org/events:
         options: []
         parameters:
         - name: org
@@ -17874,7 +17874,7 @@ subcommands:
           summary: Name of organisation.
           type: string
         summary: List public events for an organization....
-      /orgs/{org}/issues:
+      /orgs/:org/issues:
         options:
         - enum: *10
           name: q-filter
@@ -17914,7 +17914,7 @@ subcommands:
           summary: Name of organisation.
           type: string
         summary: List issues.
-      /orgs/{org}/members:
+      /orgs/:org/members:
         options: []
         parameters:
         - name: org
@@ -17922,7 +17922,7 @@ subcommands:
           summary: Name of organisation.
           type: string
         summary: Members list.
-      /orgs/{org}/members/{username}:
+      /orgs/:org/members/:username:
         options: []
         parameters:
         - name: org
@@ -17934,7 +17934,7 @@ subcommands:
           summary: Name of the user.
           type: string
         summary: Check if a user is, publicly or privately, a membe...
-      /orgs/{org}/public_members:
+      /orgs/:org/public_members:
         options: []
         parameters:
         - name: org
@@ -17942,7 +17942,7 @@ subcommands:
           summary: Name of organisation.
           type: string
         summary: Public members list.
-      /orgs/{org}/public_members/{username}:
+      /orgs/:org/public_members/:username:
         options: []
         parameters:
         - name: org
@@ -17954,7 +17954,7 @@ subcommands:
           summary: Name of the user.
           type: string
         summary: Check public membership.
-      /orgs/{org}/repos:
+      /orgs/:org/repos:
         options:
         - enum: *14
           name: q-type
@@ -17967,7 +17967,7 @@ subcommands:
           summary: Name of organisation.
           type: string
         summary: List repositories for the specified org....
-      /orgs/{org}/teams:
+      /orgs/:org/teams:
         options: []
         parameters:
         - name: org
@@ -17979,7 +17979,7 @@ subcommands:
         options: []
         parameters: []
         summary: Get your current rate limit status...
-      /repos/{owner}/{repo}:
+      /repos/:owner/:repo:
         options: []
         parameters:
         - name: owner
@@ -17991,7 +17991,28 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Get repository.
-      /repos/{owner}/{repo}/assignees:
+      /repos/:owner/:repo/:archive_format/:path:
+        options: []
+        parameters:
+        - name: owner
+          required: 1
+          summary: Name of repository owner.
+          type: string
+        - name: repo
+          required: 1
+          summary: Name of repository.
+          type: string
+        - enum: *25
+          name: archive_format
+          required: 1
+          summary: ~
+          type: string
+        - name: path
+          required: 1
+          summary: Valid Git reference, defaults to 'master'.
+          type: string
+        summary: Get archive link.
+      /repos/:owner/:repo/assignees:
         options: []
         parameters:
         - name: owner
@@ -18003,7 +18024,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: List assignees.
-      /repos/{owner}/{repo}/assignees/{assignee}:
+      /repos/:owner/:repo/assignees/:assignee:
         options: []
         parameters:
         - name: owner
@@ -18019,7 +18040,7 @@ subcommands:
           summary: Login of the assignee.
           type: string
         summary: Check assignee.
-      /repos/{owner}/{repo}/branches:
+      /repos/:owner/:repo/branches:
         options: []
         parameters:
         - name: owner
@@ -18031,7 +18052,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Get list of branches
-      /repos/{owner}/{repo}/branches/{branch}:
+      /repos/:owner/:repo/branches/:branch:
         options: []
         parameters:
         - name: owner
@@ -18047,7 +18068,7 @@ subcommands:
           summary: Name of the branch.
           type: string
         summary: Get Branch
-      /repos/{owner}/{repo}/collaborators:
+      /repos/:owner/:repo/collaborators:
         options: []
         parameters:
         - name: owner
@@ -18059,7 +18080,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: List.
-      /repos/{owner}/{repo}/collaborators/{user}:
+      /repos/:owner/:repo/collaborators/:user:
         options: []
         parameters:
         - name: owner
@@ -18075,7 +18096,7 @@ subcommands:
           summary: Login of the user.
           type: string
         summary: Check if user is a collaborator...
-      /repos/{owner}/{repo}/comments:
+      /repos/:owner/:repo/comments:
         options: []
         parameters:
         - name: owner
@@ -18087,7 +18108,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: List commit comments for a repository....
-      /repos/{owner}/{repo}/comments/{commentId}:
+      /repos/:owner/:repo/comments/:commentId:
         options: []
         parameters:
         - name: owner
@@ -18103,7 +18124,7 @@ subcommands:
           summary: Id of comment.
           type: integer
         summary: Get a single commit comment.
-      /repos/{owner}/{repo}/commits:
+      /repos/:owner/:repo/commits:
         options:
         - name: q-since
           required: ~
@@ -18137,7 +18158,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: List commits on a repository.
-      /repos/{owner}/{repo}/commits/{ref}/status:
+      /repos/:owner/:repo/commits/:ref/status:
         options: []
         parameters:
         - name: owner
@@ -18153,7 +18174,7 @@ subcommands:
           summary: ~
           type: string
         summary: Get the combined Status for a specific Ref...
-      /repos/{owner}/{repo}/commits/{shaCode}:
+      /repos/:owner/:repo/commits/:shaCode:
         options: []
         parameters:
         - name: owner
@@ -18169,7 +18190,7 @@ subcommands:
           summary: SHA-1 code of the commit.
           type: string
         summary: Get a single commit.
-      /repos/{owner}/{repo}/commits/{shaCode}/comments:
+      /repos/:owner/:repo/commits/:shaCode/comments:
         options: []
         parameters:
         - name: owner
@@ -18185,7 +18206,7 @@ subcommands:
           summary: SHA-1 code of the commit.
           type: string
         summary: List comments for a single commitList comments for...
-      /repos/{owner}/{repo}/compare/{baseId}...{headId}:
+      /repos/:owner/:repo/compare/:baseId...:headId:
         options: []
         parameters:
         - name: owner
@@ -18205,7 +18226,7 @@ subcommands:
           summary: ~
           type: string
         summary: Compare two commits
-      /repos/{owner}/{repo}/contents/{path}:
+      /repos/:owner/:repo/contents/:path:
         options:
         - name: q-path
           required: ~
@@ -18229,7 +18250,7 @@ subcommands:
           summary: ~
           type: string
         summary: Get contents.
-      /repos/{owner}/{repo}/contributors:
+      /repos/:owner/:repo/contributors:
         options:
         - name: q-anon
           required: 1
@@ -18245,7 +18266,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Get list of contributors.
-      /repos/{owner}/{repo}/deployments:
+      /repos/:owner/:repo/deployments:
         options: []
         parameters:
         - name: owner
@@ -18257,7 +18278,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Users with pull access can view deployments for a ...
-      /repos/{owner}/{repo}/deployments/{id}/statuses:
+      /repos/:owner/:repo/deployments/:id/statuses:
         options: []
         parameters:
         - name: owner
@@ -18273,7 +18294,7 @@ subcommands:
           summary: The Deployment ID to list the statuses from.
           type: integer
         summary: Users with pull access can view deployment statuse...
-      /repos/{owner}/{repo}/downloads:
+      /repos/:owner/:repo/downloads:
         options: []
         parameters:
         - name: owner
@@ -18285,7 +18306,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Deprecated. List downloads for a repository....
-      /repos/{owner}/{repo}/downloads/{downloadId}:
+      /repos/:owner/:repo/downloads/:downloadId:
         options: []
         parameters:
         - name: owner
@@ -18301,7 +18322,7 @@ subcommands:
           summary: Id of download.
           type: integer
         summary: Deprecated. Get a single download....
-      /repos/{owner}/{repo}/events:
+      /repos/:owner/:repo/events:
         options: []
         parameters:
         - name: owner
@@ -18313,7 +18334,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Get list of repository events.
-      /repos/{owner}/{repo}/forks:
+      /repos/:owner/:repo/forks:
         options:
         - enum: *15
           name: q-sort
@@ -18330,7 +18351,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: List forks.
-      /repos/{owner}/{repo}/git/blobs/{shaCode}:
+      /repos/:owner/:repo/git/blobs/:shaCode:
         options: []
         parameters:
         - name: owner
@@ -18346,7 +18367,7 @@ subcommands:
           summary: SHA-1 code.
           type: string
         summary: Get a Blob.
-      /repos/{owner}/{repo}/git/commits/{shaCode}:
+      /repos/:owner/:repo/git/commits/:shaCode:
         options: []
         parameters:
         - name: owner
@@ -18362,7 +18383,7 @@ subcommands:
           summary: SHA-1 code.
           type: string
         summary: Get a Commit.
-      /repos/{owner}/{repo}/git/refs:
+      /repos/:owner/:repo/git/refs:
         options: []
         parameters:
         - name: owner
@@ -18374,7 +18395,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Get all References
-      /repos/{owner}/{repo}/git/refs/{ref}:
+      /repos/:owner/:repo/git/refs/:ref:
         options: []
         parameters:
         - name: owner
@@ -18390,7 +18411,7 @@ subcommands:
           summary: ~
           type: string
         summary: Get a Reference
-      /repos/{owner}/{repo}/git/tags/{shaCode}:
+      /repos/:owner/:repo/git/tags/:shaCode:
         options: []
         parameters:
         - name: owner
@@ -18406,7 +18427,7 @@ subcommands:
           summary: ~
           type: string
         summary: Get a Tag.
-      /repos/{owner}/{repo}/git/trees/{shaCode}:
+      /repos/:owner/:repo/git/trees/:shaCode:
         options:
         - name: q-recursive
           required: ~
@@ -18426,7 +18447,7 @@ subcommands:
           summary: Tree SHA.
           type: string
         summary: Get a Tree.
-      /repos/{owner}/{repo}/hooks:
+      /repos/:owner/:repo/hooks:
         options: []
         parameters:
         - name: owner
@@ -18438,7 +18459,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Get list of hooks.
-      /repos/{owner}/{repo}/hooks/{hookId}:
+      /repos/:owner/:repo/hooks/:hookId:
         options: []
         parameters:
         - name: owner
@@ -18454,7 +18475,7 @@ subcommands:
           summary: Id of hook.
           type: integer
         summary: Get single hook.
-      /repos/{owner}/{repo}/issues:
+      /repos/:owner/:repo/issues:
         options:
         - enum: *16
           name: q-filter
@@ -18498,7 +18519,71 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: List issues for a repository.
-      /repos/{owner}/{repo}/issues/comments:
+      /repos/:owner/:repo/issues/:number:
+        options: []
+        parameters:
+        - name: owner
+          required: 1
+          summary: Name of repository owner.
+          type: string
+        - name: repo
+          required: 1
+          summary: Name of repository.
+          type: string
+        - name: number
+          required: 1
+          summary: Number of issue.
+          type: integer
+        summary: Get a single issue
+      /repos/:owner/:repo/issues/:number/comments:
+        options: []
+        parameters:
+        - name: owner
+          required: 1
+          summary: Name of repository owner.
+          type: string
+        - name: repo
+          required: 1
+          summary: Name of repository.
+          type: string
+        - name: number
+          required: 1
+          summary: Number of issue.
+          type: integer
+        summary: List comments on an issue.
+      /repos/:owner/:repo/issues/:number/events:
+        options: []
+        parameters:
+        - name: owner
+          required: 1
+          summary: Name of repository owner.
+          type: string
+        - name: repo
+          required: 1
+          summary: Name of repository.
+          type: string
+        - name: number
+          required: 1
+          summary: Number of issue.
+          type: integer
+        summary: List events for an issue.
+      /repos/:owner/:repo/issues/:number/labels:
+        options: []
+        parameters:
+        - name: owner
+          required: 1
+          summary: Name of repository owner.
+          type: string
+        - name: repo
+          required: 1
+          summary: Name of repository.
+          type: string
+        - name: number
+          required: 1
+          summary: Number of issue.
+          type: integer
+        summary: List labels on an issue.
+      /repos/:owner/:repo/issues/comments:
         options:
         - name: q-direction
           required: ~
@@ -18525,7 +18610,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: List comments in a repository.
-      /repos/{owner}/{repo}/issues/comments/{commentId}:
+      /repos/:owner/:repo/issues/comments/:commentId:
         options: []
         parameters:
         - name: owner
@@ -18541,7 +18626,7 @@ subcommands:
           summary: ID of comment.
           type: integer
         summary: Get a single comment.
-      /repos/{owner}/{repo}/issues/events:
+      /repos/:owner/:repo/issues/events:
         options: []
         parameters:
         - name: owner
@@ -18553,7 +18638,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: List issue events for a repository....
-      /repos/{owner}/{repo}/issues/events/{eventId}:
+      /repos/:owner/:repo/issues/events/:eventId:
         options: []
         parameters:
         - name: owner
@@ -18569,71 +18654,7 @@ subcommands:
           summary: Id of the event.
           type: integer
         summary: Get a single event.
-      /repos/{owner}/{repo}/issues/{number}:
-        options: []
-        parameters:
-        - name: owner
-          required: 1
-          summary: Name of repository owner.
-          type: string
-        - name: repo
-          required: 1
-          summary: Name of repository.
-          type: string
-        - name: number
-          required: 1
-          summary: Number of issue.
-          type: integer
-        summary: Get a single issue
-      /repos/{owner}/{repo}/issues/{number}/comments:
-        options: []
-        parameters:
-        - name: owner
-          required: 1
-          summary: Name of repository owner.
-          type: string
-        - name: repo
-          required: 1
-          summary: Name of repository.
-          type: string
-        - name: number
-          required: 1
-          summary: Number of issue.
-          type: integer
-        summary: List comments on an issue.
-      /repos/{owner}/{repo}/issues/{number}/events:
-        options: []
-        parameters:
-        - name: owner
-          required: 1
-          summary: Name of repository owner.
-          type: string
-        - name: repo
-          required: 1
-          summary: Name of repository.
-          type: string
-        - name: number
-          required: 1
-          summary: Number of issue.
-          type: integer
-        summary: List events for an issue.
-      /repos/{owner}/{repo}/issues/{number}/labels:
-        options: []
-        parameters:
-        - name: owner
-          required: 1
-          summary: Name of repository owner.
-          type: string
-        - name: repo
-          required: 1
-          summary: Name of repository.
-          type: string
-        - name: number
-          required: 1
-          summary: Number of issue.
-          type: integer
-        summary: List labels on an issue.
-      /repos/{owner}/{repo}/keys:
+      /repos/:owner/:repo/keys:
         options: []
         parameters:
         - name: owner
@@ -18645,7 +18666,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Get list of keys.
-      /repos/{owner}/{repo}/keys/{keyId}:
+      /repos/:owner/:repo/keys/:keyId:
         options: []
         parameters:
         - name: owner
@@ -18661,7 +18682,7 @@ subcommands:
           summary: Id of key.
           type: integer
         summary: Get a key
-      /repos/{owner}/{repo}/labels:
+      /repos/:owner/:repo/labels:
         options: []
         parameters:
         - name: owner
@@ -18673,7 +18694,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: List all labels for this repository....
-      /repos/{owner}/{repo}/labels/{name}:
+      /repos/:owner/:repo/labels/:name:
         options: []
         parameters:
         - name: owner
@@ -18689,7 +18710,7 @@ subcommands:
           summary: Name of the label.
           type: string
         summary: Get a single label.
-      /repos/{owner}/{repo}/languages:
+      /repos/:owner/:repo/languages:
         options: []
         parameters:
         - name: owner
@@ -18701,7 +18722,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: List languages.
-      /repos/{owner}/{repo}/milestones:
+      /repos/:owner/:repo/milestones:
         options:
         - enum: *21
           name: q-state
@@ -18727,7 +18748,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: List milestones for a repository....
-      /repos/{owner}/{repo}/milestones/{number}:
+      /repos/:owner/:repo/milestones/:number:
         options: []
         parameters:
         - name: owner
@@ -18743,7 +18764,7 @@ subcommands:
           summary: Number of milestone.
           type: integer
         summary: Get a single milestone.
-      /repos/{owner}/{repo}/milestones/{number}/labels:
+      /repos/:owner/:repo/milestones/:number/labels:
         options: []
         parameters:
         - name: owner
@@ -18759,7 +18780,7 @@ subcommands:
           summary: Number of milestone.
           type: integer
         summary: Get labels for every issue in a milestone....
-      /repos/{owner}/{repo}/notifications:
+      /repos/:owner/:repo/notifications:
         options:
         - name: q-all
           required: ~
@@ -18787,7 +18808,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: List your notifications in a repository...
-      /repos/{owner}/{repo}/pulls:
+      /repos/:owner/:repo/pulls:
         options:
         - enum: *23
           name: q-state
@@ -18814,7 +18835,87 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: List pull requests.
-      /repos/{owner}/{repo}/pulls/comments:
+      /repos/:owner/:repo/pulls/:number:
+        options: []
+        parameters:
+        - name: owner
+          required: 1
+          summary: Name of repository owner.
+          type: string
+        - name: repo
+          required: 1
+          summary: Name of repository.
+          type: string
+        - name: number
+          required: 1
+          summary: Id of pull.
+          type: integer
+        summary: Get a single pull request.
+      /repos/:owner/:repo/pulls/:number/comments:
+        options: []
+        parameters:
+        - name: owner
+          required: 1
+          summary: Name of repository owner.
+          type: string
+        - name: repo
+          required: 1
+          summary: Name of repository.
+          type: string
+        - name: number
+          required: 1
+          summary: Id of pull.
+          type: integer
+        summary: List comments on a pull request....
+      /repos/:owner/:repo/pulls/:number/commits:
+        options: []
+        parameters:
+        - name: owner
+          required: 1
+          summary: Name of repository owner.
+          type: string
+        - name: repo
+          required: 1
+          summary: Name of repository.
+          type: string
+        - name: number
+          required: 1
+          summary: Id of pull.
+          type: integer
+        summary: List commits on a pull request....
+      /repos/:owner/:repo/pulls/:number/files:
+        options: []
+        parameters:
+        - name: owner
+          required: 1
+          summary: Name of repository owner.
+          type: string
+        - name: repo
+          required: 1
+          summary: Name of repository.
+          type: string
+        - name: number
+          required: 1
+          summary: Id of pull.
+          type: integer
+        summary: List pull requests files.
+      /repos/:owner/:repo/pulls/:number/merge:
+        options: []
+        parameters:
+        - name: owner
+          required: 1
+          summary: Name of repository owner.
+          type: string
+        - name: repo
+          required: 1
+          summary: Name of repository.
+          type: string
+        - name: number
+          required: 1
+          summary: Id of pull.
+          type: integer
+        summary: Get if a pull request has been merged....
+      /repos/:owner/:repo/pulls/comments:
         options:
         - name: q-direction
           required: ~
@@ -18841,7 +18942,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: List comments in a repository.
-      /repos/{owner}/{repo}/pulls/comments/{commentId}:
+      /repos/:owner/:repo/pulls/comments/:commentId:
         options: []
         parameters:
         - name: owner
@@ -18857,87 +18958,7 @@ subcommands:
           summary: Id of comment.
           type: integer
         summary: Get a single comment.
-      /repos/{owner}/{repo}/pulls/{number}:
-        options: []
-        parameters:
-        - name: owner
-          required: 1
-          summary: Name of repository owner.
-          type: string
-        - name: repo
-          required: 1
-          summary: Name of repository.
-          type: string
-        - name: number
-          required: 1
-          summary: Id of pull.
-          type: integer
-        summary: Get a single pull request.
-      /repos/{owner}/{repo}/pulls/{number}/comments:
-        options: []
-        parameters:
-        - name: owner
-          required: 1
-          summary: Name of repository owner.
-          type: string
-        - name: repo
-          required: 1
-          summary: Name of repository.
-          type: string
-        - name: number
-          required: 1
-          summary: Id of pull.
-          type: integer
-        summary: List comments on a pull request....
-      /repos/{owner}/{repo}/pulls/{number}/commits:
-        options: []
-        parameters:
-        - name: owner
-          required: 1
-          summary: Name of repository owner.
-          type: string
-        - name: repo
-          required: 1
-          summary: Name of repository.
-          type: string
-        - name: number
-          required: 1
-          summary: Id of pull.
-          type: integer
-        summary: List commits on a pull request....
-      /repos/{owner}/{repo}/pulls/{number}/files:
-        options: []
-        parameters:
-        - name: owner
-          required: 1
-          summary: Name of repository owner.
-          type: string
-        - name: repo
-          required: 1
-          summary: Name of repository.
-          type: string
-        - name: number
-          required: 1
-          summary: Id of pull.
-          type: integer
-        summary: List pull requests files.
-      /repos/{owner}/{repo}/pulls/{number}/merge:
-        options: []
-        parameters:
-        - name: owner
-          required: 1
-          summary: Name of repository owner.
-          type: string
-        - name: repo
-          required: 1
-          summary: Name of repository.
-          type: string
-        - name: number
-          required: 1
-          summary: Id of pull.
-          type: integer
-        summary: Get if a pull request has been merged....
-      /repos/{owner}/{repo}/readme:
+      /repos/:owner/:repo/readme:
         options:
         - name: q-ref
           required: ~
@@ -18953,7 +18974,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Get the README.
-      /repos/{owner}/{repo}/releases:
+      /repos/:owner/:repo/releases:
         options: []
         parameters:
         - name: owner
@@ -18965,23 +18986,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Users with push access to the repository will rece...
-      /repos/{owner}/{repo}/releases/assets/{id}:
-        options: []
-        parameters:
-        - name: owner
-          required: 1
-          summary: Name of repository owner.
-          type: string
-        - name: repo
-          required: 1
-          summary: Name of repository.
-          type: string
-        - name: id
-          required: 1
-          summary: ~
-          type: string
-        summary: Get a single release asset
-      /repos/{owner}/{repo}/releases/{id}:
+      /repos/:owner/:repo/releases/:id:
         options: []
         parameters:
         - name: owner
@@ -18997,7 +19002,7 @@ subcommands:
           summary: ~
           type: string
         summary: Get a single release
-      /repos/{owner}/{repo}/releases/{id}/assets:
+      /repos/:owner/:repo/releases/:id/assets:
         options: []
         parameters:
         - name: owner
@@ -19013,7 +19018,23 @@ subcommands:
           summary: ~
           type: string
         summary: List assets for a release
-      /repos/{owner}/{repo}/stargazers:
+      /repos/:owner/:repo/releases/assets/:id:
+        options: []
+        parameters:
+        - name: owner
+          required: 1
+          summary: Name of repository owner.
+          type: string
+        - name: repo
+          required: 1
+          summary: Name of repository.
+          type: string
+        - name: id
+          required: 1
+          summary: ~
+          type: string
+        summary: Get a single release asset
+      /repos/:owner/:repo/stargazers:
         options: []
         parameters:
         - name: owner
@@ -19025,7 +19046,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: List Stargazers.
-      /repos/{owner}/{repo}/stats/code_frequency:
+      /repos/:owner/:repo/stats/code_frequency:
         options: []
         parameters:
         - name: owner
@@ -19037,7 +19058,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Get the number of additions and deletions per week...
-      /repos/{owner}/{repo}/stats/commit_activity:
+      /repos/:owner/:repo/stats/commit_activity:
         options: []
         parameters:
         - name: owner
@@ -19049,7 +19070,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Get the last year of commit activity data....
-      /repos/{owner}/{repo}/stats/contributors:
+      /repos/:owner/:repo/stats/contributors:
         options: []
         parameters:
         - name: owner
@@ -19061,7 +19082,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Get contributors list with additions, deletions, a...
-      /repos/{owner}/{repo}/stats/participation:
+      /repos/:owner/:repo/stats/participation:
         options: []
         parameters:
         - name: owner
@@ -19073,7 +19094,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Get the weekly commit count for the repo owner and...
-      /repos/{owner}/{repo}/stats/punch_card:
+      /repos/:owner/:repo/stats/punch_card:
         options: []
         parameters:
         - name: owner
@@ -19085,7 +19106,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Get the number of commits per hour in each day....
-      /repos/{owner}/{repo}/statuses/{ref}:
+      /repos/:owner/:repo/statuses/:ref:
         options: []
         parameters:
         - name: owner
@@ -19102,7 +19123,7 @@ subcommands:
             Ref to list the statuses from. It can be a SHA, a branch name, or a tag name.
           type: string
         summary: List Statuses for a specific Ref....
-      /repos/{owner}/{repo}/subscribers:
+      /repos/:owner/:repo/subscribers:
         options: []
         parameters:
         - name: owner
@@ -19114,7 +19135,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: List watchers.
-      /repos/{owner}/{repo}/subscription:
+      /repos/:owner/:repo/subscription:
         options: []
         parameters:
         - name: owner
@@ -19126,7 +19147,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Get a Repository Subscription.
-      /repos/{owner}/{repo}/tags:
+      /repos/:owner/:repo/tags:
         options: []
         parameters:
         - name: owner
@@ -19138,7 +19159,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Get list of tags.
-      /repos/{owner}/{repo}/teams:
+      /repos/:owner/:repo/teams:
         options: []
         parameters:
         - name: owner
@@ -19150,7 +19171,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Get list of teams
-      /repos/{owner}/{repo}/watchers:
+      /repos/:owner/:repo/watchers:
         options: []
         parameters:
         - name: owner
@@ -19162,27 +19183,6 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: List Stargazers. New implementation....
-      /repos/{owner}/{repo}/{archive_format}/{path}:
-        options: []
-        parameters:
-        - name: owner
-          required: 1
-          summary: Name of repository owner.
-          type: string
-        - name: repo
-          required: 1
-          summary: Name of repository.
-          type: string
-        - enum: *25
-          name: archive_format
-          required: 1
-          summary: ~
-          type: string
-        - name: path
-          required: 1
-          summary: Valid Git reference, defaults to 'master'.
-          type: string
-        summary: Get archive link.
       /repositories:
         options:
         - name: q-since
@@ -19312,7 +19312,7 @@ subcommands:
           type: string
         parameters: []
         summary: Search users.
-      /teams/{teamId}:
+      /teams/:teamId:
         options: []
         parameters:
         - name: teamId
@@ -19320,7 +19320,7 @@ subcommands:
           summary: Id of team.
           type: integer
         summary: Get team.
-      /teams/{teamId}/members:
+      /teams/:teamId/members:
         options: []
         parameters:
         - name: teamId
@@ -19328,7 +19328,7 @@ subcommands:
           summary: Id of team.
           type: integer
         summary: List team members.
-      /teams/{teamId}/members/{username}:
+      /teams/:teamId/members/:username:
         options: []
         parameters:
         - name: teamId
@@ -19340,7 +19340,7 @@ subcommands:
           summary: Name of a member.
           type: string
         summary: The "Get team member" API is deprecated and is sch...
-      /teams/{teamId}/memberships/{username}:
+      /teams/:teamId/memberships/:username:
         options: []
         parameters:
         - name: teamId
@@ -19352,7 +19352,7 @@ subcommands:
           summary: Name of a member.
           type: string
         summary: Get team membership.
-      /teams/{teamId}/repos:
+      /teams/:teamId/repos:
         options: []
         parameters:
         - name: teamId
@@ -19360,7 +19360,7 @@ subcommands:
           summary: Id of team.
           type: integer
         summary: List team repos
-      /teams/{teamId}/repos/{owner}/{repo}:
+      /teams/:teamId/repos/:owner/:repo:
         options: []
         parameters:
         - name: teamId
@@ -19392,7 +19392,7 @@ subcommands:
         options: []
         parameters: []
         summary: List who the authenticated user is following....
-      /user/following/{username}:
+      /user/following/:username:
         options: []
         parameters:
         - name: username
@@ -19440,7 +19440,7 @@ subcommands:
         options: []
         parameters: []
         summary: List your public keys.
-      /user/keys/{keyId}:
+      /user/keys/:keyId:
         options: []
         parameters:
         - name: keyId
@@ -19474,7 +19474,7 @@ subcommands:
           type: string
         parameters: []
         summary: List repositories being starred by the authenticat...
-      /user/starred/{owner}/{repo}:
+      /user/starred/:owner/:repo:
         options: []
         parameters:
         - name: owner
@@ -19490,7 +19490,7 @@ subcommands:
         options: []
         parameters: []
         summary: List repositories being watched by the authenticat...
-      /user/subscriptions/{owner}/{repo}:
+      /user/subscriptions/:owner/:repo:
         options: []
         parameters:
         - name: owner
@@ -19514,7 +19514,7 @@ subcommands:
           type: integer
         parameters: []
         summary: Get all users.
-      /users/{username}:
+      /users/:username:
         options: []
         parameters:
         - name: username
@@ -19522,7 +19522,7 @@ subcommands:
           summary: Name of user.
           type: string
         summary: Get a single user.
-      /users/{username}/events:
+      /users/:username/events:
         options: []
         parameters:
         - name: username
@@ -19530,7 +19530,7 @@ subcommands:
           summary: Name of user.
           type: string
         summary: If you are authenticated as the given user, you wi...
-      /users/{username}/events/orgs/{org}:
+      /users/:username/events/orgs/:org:
         options: []
         parameters:
         - name: username
@@ -19542,7 +19542,7 @@ subcommands:
           summary: ~
           type: string
         summary: This is the user's organization dashboard. You mus...
-      /users/{username}/followers:
+      /users/:username/followers:
         options: []
         parameters:
         - name: username
@@ -19550,7 +19550,7 @@ subcommands:
           summary: Name of user.
           type: string
         summary: List a user's followers
-      /users/{username}/following/{targetUser}:
+      /users/:username/following/:targetUser:
         options: []
         parameters:
         - name: username
@@ -19562,7 +19562,7 @@ subcommands:
           summary: Name of user.
           type: string
         summary: Check if one user follows another....
-      /users/{username}/gists:
+      /users/:username/gists:
         options:
         - name: q-since
           required: ~
@@ -19576,7 +19576,7 @@ subcommands:
           summary: Name of user.
           type: string
         summary: List a users gists.
-      /users/{username}/keys:
+      /users/:username/keys:
         options: []
         parameters:
         - name: username
@@ -19584,7 +19584,7 @@ subcommands:
           summary: Name of user.
           type: string
         summary: List public keys for a user.
-      /users/{username}/orgs:
+      /users/:username/orgs:
         options: []
         parameters:
         - name: username
@@ -19592,7 +19592,7 @@ subcommands:
           summary: Name of user.
           type: string
         summary: List all public organizations for a user....
-      /users/{username}/received_events:
+      /users/:username/received_events:
         options: []
         parameters:
         - name: username
@@ -19600,7 +19600,7 @@ subcommands:
           summary: Name of user.
           type: string
         summary: These are events that you'll only see public event...
-      /users/{username}/received_events/public:
+      /users/:username/received_events/public:
         options: []
         parameters:
         - name: username
@@ -19608,7 +19608,7 @@ subcommands:
           summary: Name of user.
           type: string
         summary: List public events that a user has received...
-      /users/{username}/repos:
+      /users/:username/repos:
         options:
         - enum: *40
           name: q-type
@@ -19621,7 +19621,7 @@ subcommands:
           summary: Name of user.
           type: string
         summary: List public repositories for the specified user....
-      /users/{username}/starred:
+      /users/:username/starred:
         options: []
         parameters:
         - name: username
@@ -19629,7 +19629,7 @@ subcommands:
           summary: Name of user.
           type: string
         summary: List repositories being starred by a user....
-      /users/{username}/subscriptions:
+      /users/:username/subscriptions:
         options: []
         parameters:
         - name: username
@@ -19641,7 +19641,7 @@ subcommands:
   PATCH:
     op: apicall
     subcommands:
-      /gists/{id}:
+      /gists/:id:
         options: []
         parameters:
         - name: id
@@ -19649,7 +19649,7 @@ subcommands:
           summary: Id of gist.
           type: integer
         summary: Edit a gist.
-      /gists/{id}/comments/{commentId}:
+      /gists/:id/comments/:commentId:
         options: []
         parameters:
         - name: id
@@ -19661,7 +19661,7 @@ subcommands:
           summary: Id of comment.
           type: integer
         summary: Edit a comment.
-      /notifications/threads/{id}:
+      /notifications/threads/:id:
         options: []
         parameters:
         - name: id
@@ -19669,7 +19669,7 @@ subcommands:
           summary: Id of thread.
           type: integer
         summary: Mark a thread as read
-      /orgs/{org}:
+      /orgs/:org:
         options: []
         parameters:
         - name: org
@@ -19677,7 +19677,7 @@ subcommands:
           summary: Name of organisation.
           type: string
         summary: Edit an Organization.
-      /repos/{owner}/{repo}:
+      /repos/:owner/:repo:
         options: []
         parameters:
         - name: owner
@@ -19689,7 +19689,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Edit repository.
-      /repos/{owner}/{repo}/comments/{commentId}:
+      /repos/:owner/:repo/comments/:commentId:
         options: []
         parameters:
         - name: owner
@@ -19705,7 +19705,7 @@ subcommands:
           summary: Id of comment.
           type: integer
         summary: Update a commit comment.
-      /repos/{owner}/{repo}/git/refs/{ref}:
+      /repos/:owner/:repo/git/refs/:ref:
         options: []
         parameters:
         - name: owner
@@ -19721,7 +19721,7 @@ subcommands:
           summary: ~
           type: string
         summary: Update a Reference
-      /repos/{owner}/{repo}/hooks/{hookId}:
+      /repos/:owner/:repo/hooks/:hookId:
         options: []
         parameters:
         - name: owner
@@ -19737,23 +19737,7 @@ subcommands:
           summary: Id of hook.
           type: integer
         summary: Edit a hook.
-      /repos/{owner}/{repo}/issues/comments/{commentId}:
-        options: []
-        parameters:
-        - name: owner
-          required: 1
-          summary: Name of repository owner.
-          type: string
-        - name: repo
-          required: 1
-          summary: Name of repository.
-          type: string
-        - name: commentId
-          required: 1
-          summary: ID of comment.
-          type: integer
-        summary: Edit a comment.
-      /repos/{owner}/{repo}/issues/{number}:
+      /repos/:owner/:repo/issues/:number:
         options: []
         parameters:
         - name: owner
@@ -19769,7 +19753,23 @@ subcommands:
           summary: Number of issue.
           type: integer
         summary: Edit an issue.
-      /repos/{owner}/{repo}/labels/{name}:
+      /repos/:owner/:repo/issues/comments/:commentId:
+        options: []
+        parameters:
+        - name: owner
+          required: 1
+          summary: Name of repository owner.
+          type: string
+        - name: repo
+          required: 1
+          summary: Name of repository.
+          type: string
+        - name: commentId
+          required: 1
+          summary: ID of comment.
+          type: integer
+        summary: Edit a comment.
+      /repos/:owner/:repo/labels/:name:
         options: []
         parameters:
         - name: owner
@@ -19785,7 +19785,7 @@ subcommands:
           summary: Name of the label.
           type: string
         summary: Update a label.
-      /repos/{owner}/{repo}/milestones/{number}:
+      /repos/:owner/:repo/milestones/:number:
         options: []
         parameters:
         - name: owner
@@ -19801,23 +19801,7 @@ subcommands:
           summary: Number of milestone.
           type: integer
         summary: Update a milestone.
-      /repos/{owner}/{repo}/pulls/comments/{commentId}:
-        options: []
-        parameters:
-        - name: owner
-          required: 1
-          summary: Name of repository owner.
-          type: string
-        - name: repo
-          required: 1
-          summary: Name of repository.
-          type: string
-        - name: commentId
-          required: 1
-          summary: Id of comment.
-          type: integer
-        summary: Edit a comment.
-      /repos/{owner}/{repo}/pulls/{number}:
+      /repos/:owner/:repo/pulls/:number:
         options: []
         parameters:
         - name: owner
@@ -19833,7 +19817,7 @@ subcommands:
           summary: Id of pull.
           type: integer
         summary: Update a pull request.
-      /repos/{owner}/{repo}/releases/assets/{id}:
+      /repos/:owner/:repo/pulls/comments/:commentId:
         options: []
         parameters:
         - name: owner
@@ -19844,12 +19828,12 @@ subcommands:
           required: 1
           summary: Name of repository.
           type: string
-        - name: id
+        - name: commentId
           required: 1
-          summary: ~
-          type: string
-        summary: Edit a release asset
-      /repos/{owner}/{repo}/releases/{id}:
+          summary: Id of comment.
+          type: integer
+        summary: Edit a comment.
+      /repos/:owner/:repo/releases/:id:
         options: []
         parameters:
         - name: owner
@@ -19865,7 +19849,23 @@ subcommands:
           summary: ~
           type: string
         summary: Users with push access to the repository can edit ...
-      /teams/{teamId}:
+      /repos/:owner/:repo/releases/assets/:id:
+        options: []
+        parameters:
+        - name: owner
+          required: 1
+          summary: Name of repository owner.
+          type: string
+        - name: repo
+          required: 1
+          summary: Name of repository.
+          type: string
+        - name: id
+          required: 1
+          summary: ~
+          type: string
+        summary: Edit a release asset
+      /teams/:teamId:
         options: []
         parameters:
         - name: teamId
@@ -19885,7 +19885,7 @@ subcommands:
         options: []
         parameters: []
         summary: Create a gist.
-      /gists/{id}/comments:
+      /gists/:id/comments:
         options: []
         parameters:
         - name: id
@@ -19893,7 +19893,7 @@ subcommands:
           summary: Id of gist.
           type: integer
         summary: Create a commen
-      /gists/{id}/forks:
+      /gists/:id/forks:
         options: []
         parameters:
         - name: id
@@ -19909,7 +19909,7 @@ subcommands:
         options: []
         parameters: []
         summary: Render a Markdown document in raw mode...
-      /orgs/{org}/repos:
+      /orgs/:org/repos:
         options: []
         parameters:
         - name: org
@@ -19917,7 +19917,7 @@ subcommands:
           summary: Name of organisation.
           type: string
         summary: Create a new repository for the authenticated user...
-      /orgs/{org}/teams:
+      /orgs/:org/teams:
         options: []
         parameters:
         - name: org
@@ -19925,7 +19925,7 @@ subcommands:
           summary: Name of organisation.
           type: string
         summary: Create team.
-      /repos/{owner}/{repo}/commits/{shaCode}/comments:
+      /repos/:owner/:repo/commits/:shaCode/comments:
         options: []
         parameters:
         - name: owner
@@ -19941,7 +19941,7 @@ subcommands:
           summary: SHA-1 code of the commit.
           type: string
         summary: Create a commit comment.
-      /repos/{owner}/{repo}/deployments:
+      /repos/:owner/:repo/deployments:
         options: []
         parameters:
         - name: owner
@@ -19953,7 +19953,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Users with push access can create a deployment for...
-      /repos/{owner}/{repo}/deployments/{id}/statuses:
+      /repos/:owner/:repo/deployments/:id/statuses:
         options: []
         parameters:
         - name: owner
@@ -19969,7 +19969,7 @@ subcommands:
           summary: The Deployment ID to list the statuses from.
           type: integer
         summary: Create a Deployment Status
-      /repos/{owner}/{repo}/forks:
+      /repos/:owner/:repo/forks:
         options: []
         parameters:
         - name: owner
@@ -19981,7 +19981,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Create a fork.
-      /repos/{owner}/{repo}/git/blobs:
+      /repos/:owner/:repo/git/blobs:
         options: []
         parameters:
         - name: owner
@@ -19993,7 +19993,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Create a Blob.
-      /repos/{owner}/{repo}/git/commits:
+      /repos/:owner/:repo/git/commits:
         options: []
         parameters:
         - name: owner
@@ -20005,7 +20005,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Create a Commit.
-      /repos/{owner}/{repo}/git/refs:
+      /repos/:owner/:repo/git/refs:
         options: []
         parameters:
         - name: owner
@@ -20017,7 +20017,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Create a Reference
-      /repos/{owner}/{repo}/git/tags:
+      /repos/:owner/:repo/git/tags:
         options: []
         parameters:
         - name: owner
@@ -20029,7 +20029,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Create a Tag Object.
-      /repos/{owner}/{repo}/git/trees:
+      /repos/:owner/:repo/git/trees:
         options: []
         parameters:
         - name: owner
@@ -20041,7 +20041,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Create a Tree.
-      /repos/{owner}/{repo}/hooks:
+      /repos/:owner/:repo/hooks:
         options: []
         parameters:
         - name: owner
@@ -20053,7 +20053,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Create a hook.
-      /repos/{owner}/{repo}/hooks/{hookId}/tests:
+      /repos/:owner/:repo/hooks/:hookId/tests:
         options: []
         parameters:
         - name: owner
@@ -20069,7 +20069,7 @@ subcommands:
           summary: Id of hook.
           type: integer
         summary: Test a push hook.
-      /repos/{owner}/{repo}/issues:
+      /repos/:owner/:repo/issues:
         options: []
         parameters:
         - name: owner
@@ -20081,7 +20081,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Create an issue.
-      /repos/{owner}/{repo}/issues/{number}/comments:
+      /repos/:owner/:repo/issues/:number/comments:
         options: []
         parameters:
         - name: owner
@@ -20097,7 +20097,7 @@ subcommands:
           summary: Number of issue.
           type: integer
         summary: Create a comment.
-      /repos/{owner}/{repo}/issues/{number}/labels:
+      /repos/:owner/:repo/issues/:number/labels:
         options: []
         parameters:
         - name: owner
@@ -20113,7 +20113,7 @@ subcommands:
           summary: Number of issue.
           type: integer
         summary: Add labels to an issue.
-      /repos/{owner}/{repo}/keys:
+      /repos/:owner/:repo/keys:
         options: []
         parameters:
         - name: owner
@@ -20125,7 +20125,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Create a key.
-      /repos/{owner}/{repo}/labels:
+      /repos/:owner/:repo/labels:
         options: []
         parameters:
         - name: owner
@@ -20137,7 +20137,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Create a label.
-      /repos/{owner}/{repo}/merges:
+      /repos/:owner/:repo/merges:
         options: []
         parameters:
         - name: owner
@@ -20149,7 +20149,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Perform a merge.
-      /repos/{owner}/{repo}/milestones:
+      /repos/:owner/:repo/milestones:
         options: []
         parameters:
         - name: owner
@@ -20161,7 +20161,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Create a milestone.
-      /repos/{owner}/{repo}/pulls:
+      /repos/:owner/:repo/pulls:
         options: []
         parameters:
         - name: owner
@@ -20173,7 +20173,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Create a pull request.
-      /repos/{owner}/{repo}/pulls/{number}/comments:
+      /repos/:owner/:repo/pulls/:number/comments:
         options: []
         parameters:
         - name: owner
@@ -20189,7 +20189,7 @@ subcommands:
           summary: Id of pull.
           type: integer
         summary: Create a comment.
-      /repos/{owner}/{repo}/releases:
+      /repos/:owner/:repo/releases:
         options: []
         parameters:
         - name: owner
@@ -20201,7 +20201,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Create a release
-      /repos/{owner}/{repo}/statuses/{ref}:
+      /repos/:owner/:repo/statuses/:ref:
         options: []
         parameters:
         - name: owner
@@ -20234,7 +20234,7 @@ subcommands:
   PUT:
     op: apicall
     subcommands:
-      /gists/{id}/star:
+      /gists/:id/star:
         options: []
         parameters:
         - name: id
@@ -20246,7 +20246,7 @@ subcommands:
         options: []
         parameters: []
         summary: Mark as read.
-      /notifications/threads/{id}/subscription:
+      /notifications/threads/:id/subscription:
         options: []
         parameters:
         - name: id
@@ -20254,7 +20254,7 @@ subcommands:
           summary: Id of thread.
           type: integer
         summary: Set a Thread Subscription.
-      /orgs/{org}/public_members/{username}:
+      /orgs/:org/public_members/:username:
         options: []
         parameters:
         - name: org
@@ -20266,7 +20266,7 @@ subcommands:
           summary: Name of the user.
           type: string
         summary: Publicize a user's membership.
-      /repos/{owner}/{repo}/collaborators/{user}:
+      /repos/:owner/:repo/collaborators/:user:
         options: []
         parameters:
         - name: owner
@@ -20282,7 +20282,7 @@ subcommands:
           summary: Login of the user.
           type: string
         summary: Add collaborator.
-      /repos/{owner}/{repo}/contents/{path}:
+      /repos/:owner/:repo/contents/:path:
         options: []
         parameters:
         - name: owner
@@ -20298,7 +20298,7 @@ subcommands:
           summary: ~
           type: string
         summary: Create a file.
-      /repos/{owner}/{repo}/issues/{number}/labels:
+      /repos/:owner/:repo/issues/:number/labels:
         options: []
         parameters:
         - name: owner
@@ -20314,7 +20314,7 @@ subcommands:
           summary: Number of issue.
           type: integer
         summary: Replace all labels for an issue....
-      /repos/{owner}/{repo}/notifications:
+      /repos/:owner/:repo/notifications:
         options: []
         parameters:
         - name: owner
@@ -20326,7 +20326,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Mark notifications as read in a repository....
-      /repos/{owner}/{repo}/pulls/{number}/merge:
+      /repos/:owner/:repo/pulls/:number/merge:
         options: []
         parameters:
         - name: owner
@@ -20342,7 +20342,7 @@ subcommands:
           summary: Id of pull.
           type: integer
         summary: Merge a pull request (Merge Button's)...
-      /repos/{owner}/{repo}/subscription:
+      /repos/:owner/:repo/subscription:
         options: []
         parameters:
         - name: owner
@@ -20354,7 +20354,7 @@ subcommands:
           summary: Name of repository.
           type: string
         summary: Set a Repository Subscription
-      /teams/{teamId}/members/{username}:
+      /teams/:teamId/members/:username:
         options: []
         parameters:
         - name: teamId
@@ -20366,7 +20366,7 @@ subcommands:
           summary: Name of a member.
           type: string
         summary: The API (described below) is deprecated and is sch...
-      /teams/{teamId}/memberships/{username}:
+      /teams/:teamId/memberships/:username:
         options: []
         parameters:
         - name: teamId
@@ -20378,7 +20378,7 @@ subcommands:
           summary: Name of a member.
           type: string
         summary: Add team membership.
-      /teams/{teamId}/repos/{org}/{repo}:
+      /teams/:teamId/repos/:org/:repo:
         options: []
         parameters:
         - name: teamId
@@ -20394,7 +20394,7 @@ subcommands:
           summary: Name of a repository.
           type: string
         summary: In order to add a repository to a team, the authen...
-      /user/following/{username}:
+      /user/following/:username:
         options: []
         parameters:
         - name: username
@@ -20402,7 +20402,7 @@ subcommands:
           summary: Name of user.
           type: string
         summary: Follow a user.
-      /user/starred/{owner}/{repo}:
+      /user/starred/:owner/:repo:
         options: []
         parameters:
         - name: owner
@@ -20414,7 +20414,7 @@ subcommands:
           summary: Name of a repository.
           type: string
         summary: Star a repository.
-      /user/subscriptions/{owner}/{repo}:
+      /user/subscriptions/:owner/:repo:
         options: []
         parameters:
         - name: owner

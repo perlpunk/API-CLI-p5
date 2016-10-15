@@ -39,6 +39,7 @@ sub openapi2appspec {
 
     for my $path (sort keys %$paths) {
         my $methods = $paths->{ $path };
+        $path =~ s{(?:\{(\w+)\})}{:$1}g;
         for my $method (sort keys %$methods) {
 
             my $config = $methods->{ $method };
