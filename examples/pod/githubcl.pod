@@ -8,7 +8,6 @@ githubcl - GitHub
 
 =head1 DESCRIPTION
 
-Powerful collaboration, code review, and code management for open source and private projects.
 
 
 =head2 GLOBAL OPTIONS
@@ -2874,22 +2873,43 @@ Options:
     --all     (flag)
 
 
-=head3  _complete
+=head3  _meta
 
-    githubcl  _complete [options]
+    githubcl  _meta <subcommands>
+
+Information and utilities for this app
+
+
+=head3 _meta completion
+
+    githubcl _meta completion <subcommands>
+
+Shell completion functions
+
+
+=head3 _meta completion generate
+
+    githubcl _meta completion generate [options]
 
 Generate self completion
 
 Options:
 
-    --name    name of the program
-    --zsh     for zsh (flag)     
-    --bash    for bash (flag)    
+    --name    name of the program (optional, override name in spec)
+    --zsh     for zsh (flag)                                       
+    --bash    for bash (flag)                                      
 
 
-=head3  _pod
+=head3 _meta pod
 
-    githubcl  _pod
+    githubcl _meta pod <subcommands>
+
+Pod documentation
+
+
+=head3 _meta pod generate
+
+    githubcl _meta pod generate
 
 Generate self pod
 

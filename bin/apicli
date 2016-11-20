@@ -2,6 +2,8 @@
 use strict;
 use warnings;
 
+our $VERSION = '0.000'; # VERSION
+
 use App::Spec;
 use App::AppSpec;
 use API::CLI::Cmd;

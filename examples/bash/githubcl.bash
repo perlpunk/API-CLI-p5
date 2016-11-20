@@ -5210,28 +5210,85 @@ Example: "2012-10-09T23:39:01Z".
         ;;
         esac
       ;;
-      _complete)
-        FLAGS+=('--zsh' 'for zsh' '--bash' 'for bash')
-        OPTIONS+=('--name' 'name of the program')
-        __githubcl_handle_options_flags
-          case $INDEX in
-          *)
-            __comp_current_options true || return # after parameters
-            case ${MYWORDS[$INDEX-1]} in
-              --data-file)
-              ;;
-              --name)
-              ;;
-
-            esac
-            ;;
-        esac
-      ;;
-      _pod)
+      _meta)
         FLAGS+=()
         OPTIONS+=()
         __githubcl_handle_options_flags
-        __comp_current_options true || return # no subcmds, no params/opts
+        case $INDEX in
+
+        1)
+            __comp_current_options || return
+            __githubcl_dynamic_comp 'commands' 'completion'$'\t''Shell completion functions'$'\n''pod'$'\t''Pod documentation'
+
+        ;;
+        *)
+        # subcmds
+        case ${MYWORDS[1]} in
+          completion)
+            FLAGS+=()
+            OPTIONS+=()
+            __githubcl_handle_options_flags
+            case $INDEX in
+
+            2)
+                __comp_current_options || return
+                __githubcl_dynamic_comp 'commands' 'generate'$'\t''Generate self completion'
+
+            ;;
+            *)
+            # subcmds
+            case ${MYWORDS[2]} in
+              generate)
+                FLAGS+=('--zsh' 'for zsh' '--bash' 'for bash')
+                OPTIONS+=('--name' 'name of the program (optional, override name in spec)')
+                __githubcl_handle_options_flags
+                  case $INDEX in
+                  *)
+                    __comp_current_options true || return # after parameters
+                    case ${MYWORDS[$INDEX-1]} in
+                      --data-file)
+                      ;;
+                      --name)
+                      ;;
+
+                    esac
+                    ;;
+                esac
+              ;;
+            esac
+
+            ;;
+            esac
+          ;;
+          pod)
+            FLAGS+=()
+            OPTIONS+=()
+            __githubcl_handle_options_flags
+            case $INDEX in
+
+            2)
+                __comp_current_options || return
+                __githubcl_dynamic_comp 'commands' 'generate'$'\t''Generate self pod'
+
+            ;;
+            *)
+            # subcmds
+            case ${MYWORDS[2]} in
+              generate)
+                FLAGS+=()
+                OPTIONS+=()
+                __githubcl_handle_options_flags
+                __comp_current_options true || return # no subcmds, no params/opts
+              ;;
+            esac
+
+            ;;
+            esac
+          ;;
+        esac
+
+        ;;
+        esac
       ;;
       help)
         FLAGS+=('--all' '')
@@ -6806,17 +6863,74 @@ Example: "2012-10-09T23:39:01Z".
             ;;
             esac
           ;;
-          _complete)
+          _meta)
             FLAGS+=()
             OPTIONS+=()
             __githubcl_handle_options_flags
-            __comp_current_options true || return # no subcmds, no params/opts
-          ;;
-          _pod)
-            FLAGS+=()
-            OPTIONS+=()
-            __githubcl_handle_options_flags
-            __comp_current_options true || return # no subcmds, no params/opts
+            case $INDEX in
+
+            2)
+                __comp_current_options || return
+                __githubcl_dynamic_comp 'commands' 'completion'$'\n''pod'
+
+            ;;
+            *)
+            # subcmds
+            case ${MYWORDS[2]} in
+              completion)
+                FLAGS+=()
+                OPTIONS+=()
+                __githubcl_handle_options_flags
+                case $INDEX in
+
+                3)
+                    __comp_current_options || return
+                    __githubcl_dynamic_comp 'commands' 'generate'
+
+                ;;
+                *)
+                # subcmds
+                case ${MYWORDS[3]} in
+                  generate)
+                    FLAGS+=()
+                    OPTIONS+=()
+                    __githubcl_handle_options_flags
+                    __comp_current_options true || return # no subcmds, no params/opts
+                  ;;
+                esac
+
+                ;;
+                esac
+              ;;
+              pod)
+                FLAGS+=()
+                OPTIONS+=()
+                __githubcl_handle_options_flags
+                case $INDEX in
+
+                3)
+                    __comp_current_options || return
+                    __githubcl_dynamic_comp 'commands' 'generate'
+
+                ;;
+                *)
+                # subcmds
+                case ${MYWORDS[3]} in
+                  generate)
+                    FLAGS+=()
+                    OPTIONS+=()
+                    __githubcl_handle_options_flags
+                    __comp_current_options true || return # no subcmds, no params/opts
+                  ;;
+                esac
+
+                ;;
+                esac
+              ;;
+            esac
+
+            ;;
+            esac
           ;;
         esac
 

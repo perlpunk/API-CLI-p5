@@ -3,16 +3,19 @@ completion:
 		appspec completion examples/$$i-appspec.yaml --zsh  > examples/zsh/_$$i; \
 		appspec completion examples/$$i-appspec.yaml --bash > examples/bash/$$i.bash; \
 	done
+	appspec completion share/apicli-spec.yaml --zsh  > share/completion/zsh/_apicli
+	appspec completion share/apicli-spec.yaml --bash  > share/completion/bash/apicli.bash
 
 appspec:
 	for i in githubcl digitaloceancl metacpancl; do \
-		./bin/apicli appspec openapi examples/$$i-openapi.yaml --name $$i > examples/$$i-appspec.yaml; \
+		./bin/apicli appspec examples/$$i-openapi.yaml --name $$i > examples/$$i-appspec.yaml; \
 	done
 
 pod:
 	for i in githubcl digitaloceancl metacpancl; do \
 		appspec pod examples/$$i-appspec.yaml > examples/pod/$$i.pod; \
 	done
+	appspec pod share/apicli-spec.yaml > lib/apicli.pod
 
 html:
 	for i in githubcl digitaloceancl metacpancl; do \

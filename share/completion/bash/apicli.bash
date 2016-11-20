@@ -2,10 +2,10 @@
 
 # http://stackoverflow.com/questions/7267185/bash-autocompletion-add-description-for-possible-completions
 
-_digitaloceancl() {
+_apicli() {
 
     COMPREPLY=()
-    local program=digitaloceancl
+    local program=apicli
     local cur=${COMP_WORDS[$COMP_CWORD]}
 #    echo "COMP_CWORD:$COMP_CWORD cur:$cur" >>/tmp/comp
     declare -a FLAGS
@@ -15,103 +15,29 @@ _digitaloceancl() {
     local INDEX=`expr $COMP_CWORD - 1`
     MYWORDS=("${COMP_WORDS[@]:1:$COMP_CWORD}")
 
-    FLAGS=('--debug' 'debug' '-d' 'debug' '--verbose' 'verbose' '-v' 'verbose' '--help' 'Show command help' '-h' 'Show command help')
-    OPTIONS=('--data-file' 'File with data for POST/PUT/PATCH/DELETE requests')
-    __digitaloceancl_handle_options_flags
+    FLAGS=('--help' 'Show command help' '-h' 'Show command help')
+    OPTIONS=()
+    __apicli_handle_options_flags
 
     case $INDEX in
 
     0)
         __comp_current_options || return
-        __digitaloceancl_dynamic_comp 'commands' 'GET'$'\t''GET call'$'\n''POST'$'\t''POST call'$'\n''help'$'\t''Show command help'
+        __apicli_dynamic_comp 'commands' 'appspec'$'\t''Generate App::Spec file'$'\n''help'$'\t''Show command help'
 
     ;;
     *)
     # subcmds
     case ${MYWORDS[0]} in
-      GET)
-        FLAGS+=()
-        OPTIONS+=()
-        __digitaloceancl_handle_options_flags
-        case $INDEX in
-
-        1)
-            __comp_current_options || return
-            __digitaloceancl_dynamic_comp 'commands' '/account'$'\t''Account information'$'\n''/droplets'$'\t''List all droplets'$'\n''/droplets/:id'$'\t''Retrieve a droplet by id'
-
-        ;;
-        *)
-        # subcmds
-        case ${MYWORDS[1]} in
-          /account)
-            FLAGS+=()
-            OPTIONS+=()
-            __digitaloceancl_handle_options_flags
-            __comp_current_options true || return # no subcmds, no params/opts
-          ;;
-          /droplets)
-            FLAGS+=()
-            OPTIONS+=()
-            __digitaloceancl_handle_options_flags
-            __comp_current_options true || return # no subcmds, no params/opts
-          ;;
-          /droplets/:id)
-            FLAGS+=()
-            OPTIONS+=()
-            __digitaloceancl_handle_options_flags
-              case $INDEX in
-              2)
-                  __comp_current_options || return
-              ;;
-              *)
-                __comp_current_options true || return # after parameters
-                case ${MYWORDS[$INDEX-1]} in
-                  --data-file)
-                  ;;
-
-                esac
-                ;;
-            esac
-          ;;
-        esac
-
-        ;;
-        esac
-      ;;
-      POST)
-        FLAGS+=()
-        OPTIONS+=()
-        __digitaloceancl_handle_options_flags
-        case $INDEX in
-
-        1)
-            __comp_current_options || return
-            __digitaloceancl_dynamic_comp 'commands' '/droplets/:id/actions'$'\t''Trigger droplet action'
-
-        ;;
-        *)
-        # subcmds
-        case ${MYWORDS[1]} in
-          /droplets/:id/actions)
-            FLAGS+=()
-            OPTIONS+=()
-            __digitaloceancl_handle_options_flags
-            __comp_current_options true || return # no subcmds, no params/opts
-          ;;
-        esac
-
-        ;;
-        esac
-      ;;
       _meta)
         FLAGS+=()
         OPTIONS+=()
-        __digitaloceancl_handle_options_flags
+        __apicli_handle_options_flags
         case $INDEX in
 
         1)
             __comp_current_options || return
-            __digitaloceancl_dynamic_comp 'commands' 'completion'$'\t''Shell completion functions'$'\n''pod'$'\t''Pod documentation'
+            __apicli_dynamic_comp 'commands' 'completion'$'\t''Shell completion functions'$'\n''pod'$'\t''Pod documentation'
 
         ;;
         *)
@@ -120,12 +46,12 @@ _digitaloceancl() {
           completion)
             FLAGS+=()
             OPTIONS+=()
-            __digitaloceancl_handle_options_flags
+            __apicli_handle_options_flags
             case $INDEX in
 
             2)
                 __comp_current_options || return
-                __digitaloceancl_dynamic_comp 'commands' 'generate'$'\t''Generate self completion'
+                __apicli_dynamic_comp 'commands' 'generate'$'\t''Generate self completion'
 
             ;;
             *)
@@ -134,13 +60,11 @@ _digitaloceancl() {
               generate)
                 FLAGS+=('--zsh' 'for zsh' '--bash' 'for bash')
                 OPTIONS+=('--name' 'name of the program (optional, override name in spec)')
-                __digitaloceancl_handle_options_flags
+                __apicli_handle_options_flags
                   case $INDEX in
                   *)
                     __comp_current_options true || return # after parameters
                     case ${MYWORDS[$INDEX-1]} in
-                      --data-file)
-                      ;;
                       --name)
                       ;;
 
@@ -156,12 +80,12 @@ _digitaloceancl() {
           pod)
             FLAGS+=()
             OPTIONS+=()
-            __digitaloceancl_handle_options_flags
+            __apicli_handle_options_flags
             case $INDEX in
 
             2)
                 __comp_current_options || return
-                __digitaloceancl_dynamic_comp 'commands' 'generate'$'\t''Generate self pod'
+                __apicli_dynamic_comp 'commands' 'generate'$'\t''Generate self pod'
 
             ;;
             *)
@@ -170,7 +94,7 @@ _digitaloceancl() {
               generate)
                 FLAGS+=()
                 OPTIONS+=()
-                __digitaloceancl_handle_options_flags
+                __apicli_handle_options_flags
                 __comp_current_options true || return # no subcmds, no params/opts
               ;;
             esac
@@ -183,91 +107,53 @@ _digitaloceancl() {
         ;;
         esac
       ;;
+      appspec)
+        FLAGS+=()
+        OPTIONS+=('--from' 'Currently only '"'"'openapi'"'"' is supported' '--out' 'Output file (default stdout)' '--name' 'appname' '--class' 'Class name (default API::CLI)')
+        __apicli_handle_options_flags
+          case $INDEX in
+          1)
+              __comp_current_options || return
+          ;;
+          *)
+            __comp_current_options true || return # after parameters
+            case ${MYWORDS[$INDEX-1]} in
+              --from)
+              ;;
+              --out)
+              ;;
+              --name)
+              ;;
+              --class)
+              ;;
+
+            esac
+            ;;
+        esac
+      ;;
       help)
         FLAGS+=('--all' '')
         OPTIONS+=()
-        __digitaloceancl_handle_options_flags
+        __apicli_handle_options_flags
         case $INDEX in
 
         1)
             __comp_current_options || return
-            __digitaloceancl_dynamic_comp 'commands' 'GET'$'\n''POST'
+            __apicli_dynamic_comp 'commands' 'appspec'
 
         ;;
         *)
         # subcmds
         case ${MYWORDS[1]} in
-          GET)
-            FLAGS+=()
-            OPTIONS+=()
-            __digitaloceancl_handle_options_flags
-            case $INDEX in
-
-            2)
-                __comp_current_options || return
-                __digitaloceancl_dynamic_comp 'commands' '/account'$'\n''/droplets'$'\n''/droplets/:id'
-
-            ;;
-            *)
-            # subcmds
-            case ${MYWORDS[2]} in
-              /account)
-                FLAGS+=()
-                OPTIONS+=()
-                __digitaloceancl_handle_options_flags
-                __comp_current_options true || return # no subcmds, no params/opts
-              ;;
-              /droplets)
-                FLAGS+=()
-                OPTIONS+=()
-                __digitaloceancl_handle_options_flags
-                __comp_current_options true || return # no subcmds, no params/opts
-              ;;
-              /droplets/:id)
-                FLAGS+=()
-                OPTIONS+=()
-                __digitaloceancl_handle_options_flags
-                __comp_current_options true || return # no subcmds, no params/opts
-              ;;
-            esac
-
-            ;;
-            esac
-          ;;
-          POST)
-            FLAGS+=()
-            OPTIONS+=()
-            __digitaloceancl_handle_options_flags
-            case $INDEX in
-
-            2)
-                __comp_current_options || return
-                __digitaloceancl_dynamic_comp 'commands' '/droplets/:id/actions'
-
-            ;;
-            *)
-            # subcmds
-            case ${MYWORDS[2]} in
-              /droplets/:id/actions)
-                FLAGS+=()
-                OPTIONS+=()
-                __digitaloceancl_handle_options_flags
-                __comp_current_options true || return # no subcmds, no params/opts
-              ;;
-            esac
-
-            ;;
-            esac
-          ;;
           _meta)
             FLAGS+=()
             OPTIONS+=()
-            __digitaloceancl_handle_options_flags
+            __apicli_handle_options_flags
             case $INDEX in
 
             2)
                 __comp_current_options || return
-                __digitaloceancl_dynamic_comp 'commands' 'completion'$'\n''pod'
+                __apicli_dynamic_comp 'commands' 'completion'$'\n''pod'
 
             ;;
             *)
@@ -276,12 +162,12 @@ _digitaloceancl() {
               completion)
                 FLAGS+=()
                 OPTIONS+=()
-                __digitaloceancl_handle_options_flags
+                __apicli_handle_options_flags
                 case $INDEX in
 
                 3)
                     __comp_current_options || return
-                    __digitaloceancl_dynamic_comp 'commands' 'generate'
+                    __apicli_dynamic_comp 'commands' 'generate'
 
                 ;;
                 *)
@@ -290,7 +176,7 @@ _digitaloceancl() {
                   generate)
                     FLAGS+=()
                     OPTIONS+=()
-                    __digitaloceancl_handle_options_flags
+                    __apicli_handle_options_flags
                     __comp_current_options true || return # no subcmds, no params/opts
                   ;;
                 esac
@@ -301,12 +187,12 @@ _digitaloceancl() {
               pod)
                 FLAGS+=()
                 OPTIONS+=()
-                __digitaloceancl_handle_options_flags
+                __apicli_handle_options_flags
                 case $INDEX in
 
                 3)
                     __comp_current_options || return
-                    __digitaloceancl_dynamic_comp 'commands' 'generate'
+                    __apicli_dynamic_comp 'commands' 'generate'
 
                 ;;
                 *)
@@ -315,7 +201,7 @@ _digitaloceancl() {
                   generate)
                     FLAGS+=()
                     OPTIONS+=()
-                    __digitaloceancl_handle_options_flags
+                    __apicli_handle_options_flags
                     __comp_current_options true || return # no subcmds, no params/opts
                   ;;
                 esac
@@ -327,6 +213,12 @@ _digitaloceancl() {
 
             ;;
             esac
+          ;;
+          appspec)
+            FLAGS+=()
+            OPTIONS+=()
+            __apicli_handle_options_flags
+            __comp_current_options true || return # no subcmds, no params/opts
           ;;
         esac
 
@@ -340,7 +232,7 @@ _digitaloceancl() {
 
 }
 
-_digitaloceancl_compreply() {
+_apicli_compreply() {
     IFS=$'\n' COMPREPLY=($(compgen -W "$1" -- ${COMP_WORDS[COMP_CWORD]}))
     if [[ ${#COMPREPLY[*]} -eq 1 ]]; then # Only one completion
         COMPREPLY=( ${COMPREPLY[0]%% -- *} ) # Remove ' -- ' and everything after
@@ -349,7 +241,7 @@ _digitaloceancl_compreply() {
 }
 
 
-__digitaloceancl_dynamic_comp() {
+__apicli_dynamic_comp() {
     local argname="$1"
     local arg="$2"
     local comp name desc cols desclength formatted
@@ -380,10 +272,10 @@ __digitaloceancl_dynamic_comp() {
             comp="$comp'$name'"$'\n'
         fi
     done <<< "$arg"
-    _digitaloceancl_compreply "$comp"
+    _apicli_compreply "$comp"
 }
 
-function __digitaloceancl_handle_options() {
+function __apicli_handle_options() {
     local i j
     declare -a copy
     local last="${MYWORDS[$INDEX]}"
@@ -410,7 +302,7 @@ function __digitaloceancl_handle_options() {
     MYWORDS=("${copy[@]}" "$last")
 }
 
-function __digitaloceancl_handle_flags() {
+function __apicli_handle_flags() {
     local i j
     declare -a copy
     local last="${MYWORDS[$INDEX]}"
@@ -436,9 +328,9 @@ function __digitaloceancl_handle_flags() {
     MYWORDS=("${copy[@]}" "$last")
 }
 
-__digitaloceancl_handle_options_flags() {
-    __digitaloceancl_handle_options
-    __digitaloceancl_handle_flags
+__apicli_handle_options_flags() {
+    __apicli_handle_options
+    __apicli_handle_flags
 }
 
 __comp_current_options() {
@@ -461,7 +353,7 @@ __comp_current_options() {
           local desc="${OPTIONS[$j+1]}"
           options_spec+="$name"$'\t'"$desc"$'\n'
       done
-      __digitaloceancl_dynamic_comp 'options' "$options_spec"
+      __apicli_dynamic_comp 'options' "$options_spec"
 
       return 1
     else
@@ -470,5 +362,5 @@ __comp_current_options() {
 }
 
 
-complete -o default -F _digitaloceancl digitaloceancl
+complete -o default -F _apicli apicli
 

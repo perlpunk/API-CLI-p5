@@ -1,6 +1,10 @@
+# ABSTRACT: 
 package API::CLI::Cmd;
 use strict;
 use warnings;
+
+our $VERSION = '0.000'; # VERSION
+
 use feature qw/ say /;
 use base 'App::Spec::Run::Cmd';
 use API::CLI::App::Spec;
@@ -33,3 +37,23 @@ sub appspec_openapi {
 }
 
 1;
+
+__END__
+
+=pod
+
+=head1 NAME
+
+API::CLI::Cmd - Base class for API::CLI command classes
+
+=head1 SYNOPSIS
+
+=head1 METHODS
+
+=over 4
+
+=item appspec_openapi
+
+=back
+
+=cut

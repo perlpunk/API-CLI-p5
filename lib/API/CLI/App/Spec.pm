@@ -1,6 +1,9 @@
+# ABSTRACT: Can turn an OpenAPI to App::Spec file
 use strict;
 use warnings;
 package API::CLI::App::Spec;
+
+our $VERSION = '0.000'; # VERSION
 
 use YAML::XS qw/ LoadFile /;
 
@@ -46,7 +49,7 @@ sub openapi2appspec {
             $spec->{name} = $name;
             $spec->{class} = $classname;
             $spec->{title} //= $openapi->{info}->{title};
-            $spec->{description} = $openapi->{info}->{description};
+            $spec->{summary} = $openapi->{info}->{description};
 
             my @parameters;
             my @options;
@@ -87,18 +90,18 @@ sub openapi2appspec {
     push @$options, {
         name => "data-file",
         type => "file",
-        description => "File with data for POST/PUT/PATCH/DELETE requests",
+        summary => "File with data for POST/PUT/PATCH/DELETE requests",
     };
     push @$options, {
         name => "debug",
         type => "flag",
-        description => "debug",
+        summary => "debug",
         aliases => ['d'],
     };
     push @$options, {
         name => "verbose",
         type => "flag",
-        description => "verbose",
+        summary => "verbose",
         aliases => ['v'],
     };
     $spec->{apppec}->{version} = '0.001';
@@ -126,3 +129,49 @@ sub param2appspec {
 }
 
 1;
+
+__END__
+
+=pod
+
+=head1 NAME
+
+API::CLI::App::Spec - Can turn an OpenAPI to App::Spec file
+
+=head1 METHODS
+
+=over 4
+
+=item from_openapi
+
+    my $spec = API::CLI::App::Spec->from_openapi(
+        openapi => $openapi,
+        name => "myclient",
+        class => "My::API::CLI", # default API::CLI
+    );
+
+Returns a L<App::Spec> object from an OpenAPI structure.
+
+=item openapi2appspec
+
+    my $hashref = API::CLI::App::Spec->openapi2appspec(
+        openapi => $openapi,
+        name => $name,
+        class => $class,
+    );
+
+Returns a hashref representing L<App::Spec> data
+
+=item param2appspec
+
+    my $appspec_param = $class->param2appspec($p);
+
+Returns a Parameter for L<App::Spec> from an OpenAPI parameter.
+
+=item openapi
+
+Attribute which stores the OpenAPI structure.
+
+=back
+
+=cut

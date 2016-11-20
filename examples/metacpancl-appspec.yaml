@@ -2,7 +2,6 @@
 apppec:
   version: '0.001'
 class: API::CLI
-description: Unofficial MetaCPAN API specification
 name: metacpancl
 openapi:
   basePath: /v0
@@ -110,18 +109,18 @@ openapi:
   - https
   swagger: 2.0
 options:
-- description: File with data for POST/PUT/PATCH/DELETE requests
-  name: data-file
+- name: data-file
+  summary: File with data for POST/PUT/PATCH/DELETE requests
   type: file
 - aliases:
   - d
-  description: debug
   name: debug
+  summary: debug
   type: flag
 - aliases:
   - v
-  description: verbose
   name: verbose
+  summary: verbose
   type: flag
 subcommands:
   GET:
@@ -209,4 +208,5 @@ subcommands:
         parameters: []
         summary: file
     summary: POST call
+summary: Unofficial MetaCPAN API specification
 title: MetaCPAN API

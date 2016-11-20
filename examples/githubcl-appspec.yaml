@@ -2,8 +2,6 @@
 apppec:
   version: '0.001'
 class: API::CLI
-description: |
-  Powerful collaboration, code review, and code management for open source and private projects.
 name: githubcl
 openapi:
   basePath: /
@@ -17157,18 +17155,18 @@ openapi:
   swagger: '2.0'
   x-hasEquivalentPaths: true
 options:
-- description: File with data for POST/PUT/PATCH/DELETE requests
-  name: data-file
+- name: data-file
+  summary: File with data for POST/PUT/PATCH/DELETE requests
   type: file
 - aliases:
   - d
-  description: debug
   name: debug
+  summary: debug
   type: flag
 - aliases:
   - v
-  description: verbose
   name: verbose
+  summary: verbose
   type: flag
 subcommands:
   DELETE:
@@ -20427,4 +20425,6 @@ subcommands:
           type: string
         summary: Watch a repository.
     summary: PUT call
+summary: |
+  Powerful collaboration, code review, and code management for open source and private projects.
 title: GitHub

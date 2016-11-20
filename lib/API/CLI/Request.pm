@@ -1,7 +1,10 @@
+# ABSTRACT: Does the actual request to the API
 use strict;
 use warnings;
 use 5.010;
 package API::CLI::Request;
+
+our $VERSION = '0.000'; # VERSION
 
 use Moo;
 
@@ -84,3 +87,44 @@ sub header {
 }
 
 1;
+
+__END__
+
+=pod
+
+=head1 NAME
+
+API::CLI::Request = Does the actual request to the API
+
+=head1 METHODS
+
+=over 4
+
+=item content
+
+    $req->content($data);
+
+Sets POST/PUT/PATCH content
+
+
+=item from_openapi
+
+=item header
+
+=item method
+
+=item openapi
+
+=item path
+
+=item req
+
+=item request
+
+=item url
+
+=item verbose
+
+=back
+
+=cut

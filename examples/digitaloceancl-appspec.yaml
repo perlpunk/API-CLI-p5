@@ -2,7 +2,6 @@
 apppec:
   version: '0.001'
 class: API::CLI
-description: Unofficial DigitalOcean API specification
 name: digitaloceancl
 openapi:
   basePath: /v2
@@ -47,18 +46,18 @@ openapi:
   - https
   swagger: 2.0
 options:
-- description: File with data for POST/PUT/PATCH/DELETE requests
-  name: data-file
+- name: data-file
+  summary: File with data for POST/PUT/PATCH/DELETE requests
   type: file
 - aliases:
   - d
-  description: debug
   name: debug
+  summary: debug
   type: flag
 - aliases:
   - v
-  description: verbose
   name: verbose
+  summary: verbose
   type: flag
 subcommands:
   GET:
@@ -89,4 +88,5 @@ subcommands:
         parameters: []
         summary: Trigger droplet action
     summary: POST call
+summary: Unofficial DigitalOcean API specification
 title: DigitalOcean API
