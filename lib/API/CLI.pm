@@ -182,6 +182,8 @@ work.
 
 =item L<App::Spec> - Commandline Interface Framework
 
+=back
+
 =head1 LICENSE
 
 This library is free software and may be distributed under the same terms

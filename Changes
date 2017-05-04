@@ -1,0 +1,4 @@
+0.001_001 2017-05-05 01:10:17+02:00
+    - Fix path to spec file
+    - Fix error output on failed requests
+
