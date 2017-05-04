@@ -75,6 +75,9 @@ sub apicall {
         unless ($ok) {
             $run->err($out);
         }
+        else {
+            $run->out($out);
+        }
     }
     say $content;
 
