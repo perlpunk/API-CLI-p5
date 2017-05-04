@@ -8,7 +8,7 @@ use App::Spec;
 use API::CLI::Cmd;
 use File::Share qw/ dist_file /;
 
-my $specfile = dist_file("API-CLI-Cmd", "apicli-spec.yaml");
+my $specfile = dist_file("API-CLI", "apicli-spec.yaml");
 my $spec = App::Spec->read($specfile);
 my $run = $spec->runner;
 $run->run;

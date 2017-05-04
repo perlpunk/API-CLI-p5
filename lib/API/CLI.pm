@@ -73,9 +73,8 @@ sub apicall {
     my ($ok, $out, $content) = $REQ->request;
     if (defined $out) {
         unless ($ok) {
-            $out = $run->error($out);
+            $run->err($out);
         }
-        warn $out;
     }
     say $content;
 
